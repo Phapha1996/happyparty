@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>达人分享-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/jquery.range.css">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<link rel="stylesheet" href="../css/menudown.css">
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">场地</h1>
+	</header>
+	<div class="cj-line-44"></div>
+	<div class="mui-centent">
+		<dl class="topmenu">
+			<dt>
+			<div class="selectlist">
+				<div class="select_textdiv">
+					<p class="s_text">地区&nbsp;▼</p>
+				</div>
+				<input type="hidden" value="全部"/>
+				<div class="select_textul">
+					<ul class="select_first_ul">
+						<li>
+							<p>全部</p>
+						</li>
+						<li>
+							<p>南宁</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</dt>
+			<dt>
+			<div class="selectlist">
+				<div class="select_textdiv">
+					<p class="s_text">人数&nbsp;▼</p>
+				</div>
+				<input type="hidden" value="全部"/>
+				<div class="select_textul">
+					<ul class="select_first_ul">
+						<li>
+							<p>全部</p>
+						</li>
+						<li>
+							<p>0-10</p>
+						</li>
+						<li>
+							<p>10-20</p>
+						</li>
+						<li>
+							<p>20-30</p>
+						</li>
+						<li>
+							<p>30-40</p>
+						</li>
+						<li>
+							<p>40-50</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</dt>
+			<dt>
+			<div class="selectlist">
+				<div class="select_textdiv">
+					<p class="s_text">价格&nbsp;▼</p>
+				</div>
+				<input type="hidden" value="全部"/>
+				<div class="select_textul">
+					<ul class="select_first_ul">
+						<li>
+							<p>全部</p>
+						</li>
+						<li>
+							<p>0-1000</p>
+						</li>
+						<li>
+							<p>1000-2000</p>
+						</li>
+						<li>
+							<p>2000-3000</p>
+						</li>
+						<li>
+							<p>3000-4000</p>
+						</li>
+						<li>
+							<p>4000-5000</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</dt>
+		</dl>
+	</div>
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content cj-bg-light-grey mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="cj-line-44"></div>
+		<div class="mui-scroll">
+			<!--数据列表-->
+			<ul class="mui-table-view" id="cardContainer">
+
+			</ul>
+		</div>
+	</div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<script id="cardTpl" type="text/html">
+		<% for(var i=0;i<list.length;i++){ %>
+			<a href="/site/detail?id=<%==list[i].id%>">
+				<div class="mui-card-content">
+					<div class="mui-card ">
+						<div class="images-wrapper">
+							<img onclick="" src="<%==list[i].img %>" alt="" width="100%" height="100%" />
+							<div class="images-content images-left">
+								&nbsp;￥
+								<%==list[i].price %>&nbsp;&nbsp;
+							</div>
+							<!-- <div class="images-content images-right add-plan">
+								&nbsp;&nbsp;加入计划&nbsp;&nbsp;
+							</div> -->
+						</div>
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<p class="cj-text-size-14 cj-text-weight">
+									<%==list[i].title %>
+								</p>
+								<p>
+									<% for(var j=0;j<list[i].label.length;j++){ %>
+										<span class="mui-badge mui-badge-primary"><%==list[i].label[j] %></span>
+										<%}%>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<% } %>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/site/menudown.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/jquery.range.js"></script>
+	<script src="../js/site/index.js"></script>
+</body>
+
+</html>

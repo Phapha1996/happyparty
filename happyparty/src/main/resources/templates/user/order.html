@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>我的订单-潮聚</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<style>
+			.mui-pull-bottom-wrapper {text-align: center !important;color: #999 !important;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item{color:#999;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item.mui-active {font-weight: bold;border-bottom: 3px solid #000 !important;line-height: 36px;color:#000;}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{border-top:none;}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">我的订单</h1>
+	</header>
+	<div class="mui-content  cj-bg-light-grey" >
+		<div id="slider" class="mui-slider mui-fullscreen mui-content-phone">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll cj-bg-white">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+									待支付
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+									待处理
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+									未使用
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+									已完成
+					</a>
+					<a class="mui-control-item" href="#item5mobile">
+									退款中
+					</a>
+					<a class="mui-control-item" href="#item6mobile">
+									已退款
+					</a>
+					<a class="mui-control-item" href="#item7mobile">
+									已取消
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="noPayList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="noHandleList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item3mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="noUseList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item4mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="usedList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item5mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="refundList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item6mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="refundedList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item7mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="cancelList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script type="text/html" id="noPayTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('noPay',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="noHandleTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('noHandle',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="noUseTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('noUse',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="usedTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('used',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="refundTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('refund',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="cancelTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('cancel',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="refundedTpl">
+		<% for(var key in result){
+				for(var i=0;i<result[key].length;i++){
+						include('refunded',result[key][i]);
+				}
+			}
+		%>
+	</script>
+	<script type="text/html" id="noPay">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">待支付</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">取消</button>
+						</span>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">去支付</button>
+							&nbsp;
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="noHandle">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">待处理</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">退款</button>
+						</span>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">联系商家</button>
+							&nbsp;
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="noUse">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">未使用</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">退款</button>
+						</span>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">二维码</button>
+							&nbsp;
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="used">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">已完成</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">评价</button>
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="refund">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">退款中</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">联系商家</button>
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="refunded">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:
+						<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">已退款</button>
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="cancel">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">已取消</button>
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/common/mui.pullToRefresh.js"></script>
+	<script src="..//js/common/mui.pullToRefresh.material.js"></script>
+	<script src="..//js/user/order.js"></script>
+</body>
+
+</html>

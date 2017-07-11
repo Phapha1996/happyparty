@@ -1,0 +1,15 @@
+{
+  "rel": true,
+  "msg": "获取成功",
+  "result": [
+    {
+      "name": "生日趴",
+      "imgUrl": "img/001.jpg"
+    },
+    {
+      "name": "宝贝派对",
+      "imgUrl": "img/002.jpg"
+    }
+  ],
+  "count": 57
+}

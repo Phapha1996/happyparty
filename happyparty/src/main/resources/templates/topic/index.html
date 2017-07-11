@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>达人分享-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">达人分享</h1>
+	</header>
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content cj-bg-light-grey mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="mui-scroll">
+			<!--数据列表-->
+			<ul class="mui-table-view" id="cardContainer">
+
+			</ul>
+		</div>
+	</div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div id="footer"></div>
+	<script id="cardTpl" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+					<a href="/topic/detail?tid=<%==result[i].tid %>">
+						<div class="mui-card">
+							<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(img/default.png)"></div>
+							<div class="mui-card-content">
+								<div style="height:60px;line-height:60px;" class="mui-card-content-inner cj-siteLayout-title">
+									<p style="height:60px;line-height:60px;color:#666;">
+										<%==result[i].title%>
+									</p>
+								</div>
+							</div>
+						</div>
+					</a>
+			<% } %>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/common/footer.js"></script>
+	<script src="../js/topic/index.js"></script>
+</body>
+
+</html>

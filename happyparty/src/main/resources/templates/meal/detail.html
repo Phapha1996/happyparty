@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>场地详细-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/icons-extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<link rel="stylesheet" href="../css/priceCalenar.css">
+	<link rel="stylesheet" href="../css/common/share.css">
+	<style>
+		.mui-table-view:before,
+		.mui-table-view:after {
+			background: none !important;
+		}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header id="header" class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title" id="addCollect">套餐详细</h1>
+		<span onclick="_system._guide(true)" class="cj-margin-top-10 mui-icon-extra mui-icon-extra-share mui-pull-right"></span>
+		<a class="cj-margin-top-10 mui-icon-extra mui-icon-extra-heart mui-pull-right"></a>
+	</header>
+
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content cj-bg-light-grey mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="mui-scroll">
+			<div id="goodInfo">
+
+			</div>
+
+
+		</div>
+
+	</div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-40"></div>
+	<nav class="mui-bar mui-bar-tab cj-bg-white  cj-none-border cj-padded-0">
+		<div class="mui-row">
+			<div class="mui-col-sm-6 mui-col-xs-6 mui-bar-div">
+				<button style="top:0;" type="button" class="mui-btn-block ">微信咨询</button>
+			</div>
+			<div class="mui-col-sm-6 mui-col-xs-6">
+				<button style="top:0;" type="button" id="addCar" class="mui-btn-primary mui-btn-block ">立即下单</button>
+			</div>
+		</div>
+	</nav>
+	<div id="cover"></div>
+	<div id="guide"><img src="/img/share.png"></div>
+	<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+	<script type="text/html" id="goodInfoTpl">
+		<div class="mui-content cj-bg-light-grey" id="imgSlider">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="<%==imgs[imgs.length-1].imgUrl%>">
+						</a>
+					</div>
+					<% for(var i=0;i<imgs.length;i++){%>
+						<div class="mui-slider-item">
+							<a href="#">
+							<img src="<%==imgs[i].imgUrl%>">
+						</a>
+						</div>
+						<%}%>
+							<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+							<div class="mui-slider-item mui-slider-item-duplicate">
+								<a href="#">
+							<img src="<%==imgs[imgs.length-1].imgUrl%>">
+						</a>
+							</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<% for(var i=1;i<imgs.length;i++){%>
+						<div class="mui-indicator"></div>
+						<%}%>
+				</div>
+			</div>
+			<div class="mui-content cj-padded-10 cj-bg-white">
+				<h4 class="cj-text-size-16"><%==title%></h4>
+				<h5 class="cj-text-size-16 cj-text-color-danger">人均价:￥<%==price%></h5>
+				<div>
+					<%
+						 	tag = tags.split("|");
+							for(var i=0;i<tag.length;i++){
+						 %>
+						<span class="mui-badge mui-badge-primary"><%==tag[i]%></span>
+						<%}%>
+				</div>
+			</div>
+		</div>
+		<div class="cj-line-20"></div>
+		<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary cj-bg-white">
+			<a class="mui-control-item mui-active" href="#item1">
+				详细信息
+				</a>
+			<a class="mui-control-item" href="#item2">
+				用户评价
+				</a>
+		</div>
+		<!-- 场地详细 -->
+		<div class="mui-content mui-control-content mui-active" id="item1">
+			<!-- 别墅介绍 -->
+			<div>
+				<p class="mui-text-center cj-line-height-30 cj-margin-bottom-0">
+					<span class="mui-icon mui-icon-minus cj-text-size-16"></span> &nbsp;详细介绍
+				</p>
+				<div class="cj-bg-white cj-padded-10 cj-content-card" style="max-height:400px;" data-height="400px">
+					<%==description%>
+				</div>
+				<div class="cj-bg-white mui-text-center ">
+					<button type="button" class="mui-btn mui-min-bth cj-margin-tb-10 btn-more ">更多</button>
+				</div>
+			</div>
+
+
+			<div>
+				<p class="mui-text-center cj-line-height-30 cj-margin-bottom-0">
+					<span class="mui-icon mui-icon-minus cj-text-size-16"></span> &nbsp;服务范围
+				</p>
+				<div class="cj-bg-white cj-padded-10 cj-content-card" style="max-height:60px;" data-height="60px">
+					<%==reference%>
+				</div>
+				<div class="cj-bg-white mui-text-center ">
+					<button type="button" class="mui-btn mui-min-bth cj-margin-tb-10 btn-more ">更多</button>
+				</div>
+			</div>
+
+			<div>
+				<p class="mui-text-center cj-line-height-30 cj-margin-bottom-0">
+					<span class="mui-icon mui-icon-minus cj-text-size-16"></span> &nbsp;温馨提示
+				</p>
+				<div class="cj-bg-white cj-padded-10 cj-content-card" style="max-height:150px;" data-height="150px">
+					<%==remind%>
+				</div>
+				<div class="cj-bg-white mui-text-center ">
+					<button type="button" class="mui-btn mui-min-bth cj-margin-tb-10 btn-more ">更多</button>
+				</div>
+			</div>
+			<div id="recommend">
+
+			</div>
+		</div>
+		<div class="mui-content mui-control-content" id="item2">
+			<div >
+				<p class="mui-text-center cj-line-height-30 cj-margin-bottom-0">
+					<span class="mui-icon mui-icon-minus cj-text-size-16"></span> &nbsp;用户评价
+				</p>
+				<div class="cj-bg-white cj-padded-10 cj-content-card">
+					<ul class="mui-table-view" id="discuss">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div style="height:60px;"></div>
+	</script>
+	<script type="text/html" id="recommendTpl">
+		<p class="mui-text-center cj-line-height-30 cj-margin-bottom-0">
+			<span class="mui-icon mui-icon-minus cj-text-size-16"></span> &nbsp;猜你喜欢
+		</p>
+		<div class="cj-bg-white cj-padded-10 cj-content-card">
+			<ul class="mui-table-view">
+				<% for(var i=0;i<result.length;i++){  %>
+					<li class="mui-table-view-cell mui-media">
+						<a href="/meal/detail?id=<%==result[i].smid%>">
+							<img class="mui-media-object mui-pull-left" src="<% if(result[i].imgs.length>0) print(result[i].imgs[0].imgUrl)%>"/>
+							<div class="mui-media-body">
+								<%==result[i].title%>
+								<p class='mui-ellipsis'>
+									<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">￥<%==result[i].price%></button>
+								</p>
+							</div>
+						</a>
+					</li>
+					<%}%>
+			</ul>
+		</div>
+	</script>
+	<script type="text/html" id="discussTpl">
+
+				<% for(var i=0;i<$data.length;i++){ %>
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left cj-commit-detail-img" src="../img/icon-1.png">
+					<div class="mui-media-body">
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%" ;>
+								<span><%==$data[i].user.nickname%>&nbsp;&nbsp;2017-06-15&nbsp;</span>
+							</p>
+						</p>
+					</div>
+					<p class="cj-line-10"></p>
+					<p class="cj-line-height-30">
+						<%==$data[i].content%>
+					</p>
+				</li>
+				<%}%>
+
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/share.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/common/public.js"></script>
+	<script src="../js/meal/detail.js"></script>
+</body>
+
+</html>

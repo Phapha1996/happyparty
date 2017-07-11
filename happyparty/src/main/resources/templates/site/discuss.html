@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>评价列表-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">评价</h1>
+		<a class="mui-icon mui-icon-compose mui-pull-right" id="discussLink"></a>
+	</header>
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content cj-bg-light-grey mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="mui-scroll">
+			<!--数据列表-->
+			<ul class="mui-table-view" id="cardContainer">
+
+			</ul>
+		</div>
+	</div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div id="footer"></div>
+	<script id="cardTpl" type="text/html">
+			<ul class="mui-table-view">
+				<% for(var i=0;i<$data.length;i++){ %>
+				<li class="mui-table-view-cell mui-media">
+					<img class="mui-media-object mui-pull-left cj-commit-detail-img" src="../img/icon-1.png">
+					<div class="mui-media-body">
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%" ;>
+								<span><%==$data[i].user.nickname%>&nbsp;&nbsp;2017-06-15&nbsp;</span>
+							</p>
+						</p>
+					</div>
+					<p class="cj-line-10"></p>
+					<p class="cj-line-height-30">
+						<%==$data[i].content%>
+					</p>
+				</li>
+				<%}%>
+			</ul>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/common/footer.js"></script>
+	<script src="../js/site/discuss.js"></script>
+</body>
+
+</html>

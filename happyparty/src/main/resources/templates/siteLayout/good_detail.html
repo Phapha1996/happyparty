@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>搭配套餐-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<link rel="stylesheet" href="../css/common/mui.picker.min2.css">
+	<style>
+		.mui-table-view:before,
+		.mui-table-view:after {
+			background: none !important;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">搭配你的套餐</h1>
+	</header>
+	<div id="pullrefresh" class="mui-content cj-bg-white mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="mui-scroll">
+			<div id="goodsList">
+			</div>
+		</div>
+	</div>
+	<div class="mui-backdrop-car" style="opacity:1;display:none;"></div>
+	<div id="carDetailBox" class="mui-dtpicker " data-type="date">
+		<div class="mui-dtpicker-header">
+			<span>清单明细</span>
+			<button data-id="btn-ok" class="mui-btn " id="clear">清空</button>
+		</div>
+		<div class="mui-dtpicker-title">
+		</div>
+		<div class="mui-dtpicker-body">
+			<div class="mui-card mui-card-no-shadow">
+				<form class="mui-input-group" id="carDetailBoxList">
+
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab cj-bg-white  cj-none-border cj-padded-0">
+		<div class="mui-row">
+			<div class="mui-col-sm-4 mui-col-xs-4 mui-bar-div">
+				<span class="mui-tab-label">合计:￥<span id="totalPrice" class="cj-text-color-danger">0.00</span></span>
+			</div>
+			<div id="carDetailbtn" class="mui-col-sm-4 mui-col-xs-4 mui-bar-div">
+				<span>明细</span>
+			</div>
+			<div class="mui-col-sm-4 mui-col-xs-4">
+				<button style="top:0;" type="button" id="addOrderList" class="mui-btn-primary mui-btn-block ">加入清单</button>
+			</div>
+		</div>
+
+	</nav>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<script id="itemTpl" type="text/html">
+		<%  for(var temp in list){  %>
+			<ul class="mui-table-view cj-bg-white">
+				<div class="cj-site-list-header mui-table-view-divider mui-indexed-list-group">
+					<%==temp%>
+				</div>
+				<div class="cj-site-list">
+					<% for(var i=0;i<list[temp].length;i++){  %>
+						<div class="cj-site-list-item">
+							<div class="cj-site-list-left mui-pull-left">
+								<img src="../img/card-list-3.jpg" width="100%" height="100%" />
+							</div>
+							<div class="cj-site-list-right">
+								<div class="cj-site-list-right-item cj-title">
+									<%==list[temp][i].title%>
+								</div>
+								<div class="cj-site-list-right-item cj-des">
+									气球*3,主题桌布*1，气球*3,主题桌布*1，气球*3,主题桌布*1，
+								</div>
+								<div class="cj-site-list-right-item">
+									<div class="mui-input-row">
+										<label class="cj-price" style="vertical-align:middle;">￥<%==list[temp][i].price%></label>
+										<div class="mui-numbox" style="width:120px;height:25px;vertical-align:middle;">
+											<button class="mui-btn-numbox-minus" type="button">-</button>
+											<input  data-id="<%==list[temp][i].dpid%>" data-title="<%==list[temp][i].title%>" data-price="<%==list[temp][i].price%>" value="0" class="mui-input-numbox" type="number" style="padding:0;font-size:14px;line-height:20px;" />
+											<button class="mui-btn-numbox-plus" type="button">+</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% } %>
+				</div>
+			</ul>
+			<%}%>
+	</script>
+	<script id="detailCarItemTpl" type="text/html">
+		<div class="mui-input-row">
+			<label style="width:40%!important;overflow:hidden;"><%==title%></label>
+			<span class="cj-line-height-40 cj-text-color-danger">￥<%==price%></span>
+			<div class="mui-numbox">
+				<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+				<input data-id="<%==id%>" data-title="<%==title%>" data-price="<%==price%>" value="<%==num%>" class="mui-input-numbox" type="number" />
+				<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+		</div>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/siteLayout/good_detail.js"></script>
+
+</body>
+
+</html>

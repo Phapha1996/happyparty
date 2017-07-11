@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 购物清单的Mapper -->
+
+<mapper namespace="com.party.orders.mapper.ShopCartMapper">
+
+	<resultMap type="com.party.dto.OrdersDTO" id="OrdersDTOMap">
+	<!-- ShopCart Start -->
+		<id column="spid" property="spid"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"/>
+		<!-- 需要的数量 -->
+		<result column="number" property="number"/>
+		<result column="orders_num" property="ordersNum"/>
+		<result column="orders_state" property="ordersState"/>
+		<result column="ctime" property="ctime"/>
+	<!-- shopCart End -->
+	<!-- OrdersDTO Start -->
+		<result column="title" property="title"/>
+		<result column="price" property="price"/>
+		<!-- 商品拥有的数量 -->
+		<result column="has_number" property="hasNumber"/>
+	<!-- OrdersDTO END -->
+		<association property="user" javaType="com.party.domain.User">
+			<id column="id" property="id"/>
+		</association>
+		<association property="img" javaType="com.party.domain.Img">
+			<id column="iid" property="iid"/>
+			<result column="img_url" property="imgUrl"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="com.party.domain.ShopCart" id="BaseMap">
+		<id column="spid" property="spid"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"/>
+		<result column="number" property="number"/>
+		<result column="orders_num" property="ordersNum"/>
+		<result column="orders_state" property="ordersState"/>
+		<result column="ctime" property="ctime"/>
+	</resultMap>
+	
+	<!-- 动态分辨是哪一张商品表 -->
+	<sql id="know_table">
+		<if test="productType=='二级服务'">
+			serve tb WHERE tb.sid=#{productId} 
+		</if>
+		<if	test="productType=='场地'">
+			site tb WHERE tb.siid=#{productId} 
+		</if>
+		<if	test="productType=='场地布置'">
+			dec_product tb WHERE tb.dpid=#{productId} 
+		</if>
+	</sql>
+	<!-- 分页逻辑 -->
+	<sql id="page">
+		<if test="pageIndex!=null">
+			<if test="pageSize!=null">
+				ORDER BY sc.ctime DESC LIMIT #{pageIndex},#{pageSize} 
+			</if>
+		</if>
+	</sql>
+
+
+	<insert id="save" parameterType="com.party.domain.ShopCart">
+		INSERT INTO shop_cart(product_type,product_id,user_id,orders_state,admin_id,number) 
+		VALUES (#{productType},#{productId},#{user.id},#{ordersState},#{admin.aid},#{number})
+	</insert>
+	
+	<insert id="saveOnDecorationProduct">
+		INSERT INTO shop_cart(product_type,product_id,user_id,orders_state,admin_id,number) 
+		VALUES ('布置商品',#{dpid},#{userId},#{ordersState},#{adminId},#{number})
+	</insert>
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		DELETE FROM shop_cart WHERE spid=#{spid}
+	</delete>
+	
+	<select id="findById" parameterType="java.lang.Integer" resultMap="OrdersDTOMap">
+		SELECT sc.*,i.* FROM shop_cart sc LEFT JOIN img i 
+		ON (i.product_id=sc.product_id AND i.product_type=sc.product_type) 
+		WHERE sc.spid=#{scid} 
+	</select>
+	
+	<select id="listSiteShopCartByUserIdAndState" resultMap="OrdersDTOMap">
+		SELECT sc.*,i.*,s.title,s.price,s.num as has_number 
+		FROM user u JOIN shop_cart sc ON u.id=sc.user_id 
+		JOIN site s ON (sc.product_id=s.siid AND sc.product_type='场地') 
+		LEFT JOIN img i ON (i.product_id=s.siid AND i.product_type='site') 
+		WHERE u.id=#{userId} AND sc.orders_state=#{ordersState}
+		<include refid="page"></include>
+	</select>
+	
+	<select id="listServeShopCartByUserIdAndStateAndServeType" resultMap="OrdersDTOMap">
+		SELECT sc.*,i.*,s.title,s.price,s.number as has_number 
+		FROM user u JOIN shop_cart sc ON u.id=sc.user_id 
+		JOIN serve s ON (sc.product_id=s.sid AND sc.product_type='二级服务') 
+		LEFT JOIN img i ON (i.product_id=s.sid AND i.product_type='二级服务') 
+		WHERE u.id=#{userId} AND sc.orders_state=#{ordersState} AND s.type=#{serveType} 
+		<include refid="page"></include>
+	</select>
+	
+	<select id="listDecProductShopCartByUserIdAndState" resultMap="OrdersDTOMap">
+		SELECT sc.*,i.*,d.title,d.price,d.number as has_number 
+		FROM user u JOIN shop_cart sc ON u.id=sc.user_id 
+		JOIN dec_product d ON (sc.product_id=d.dpid AND sc.product_type='布置商品') 
+		LEFT JOIN img i ON (i.product_id=d.dpid AND i.product_type='布置商品') 
+		WHERE u.id=#{userId} AND sc.orders_state=#{ordersState} 
+		<include refid="page"></include>
+	</select>
+	<!-- 有问题 -->
+	<select id="countByStateAndUserId" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM user u JOIN shop_cart sc ON sc.user_id=u.id 
+		WHERE u.id=#{userId} AND sc.orders_state=#{ordersState}
+	</select>
+	
+	<update id="updateStateById" parameterType="java.lang.Integer">
+		UPDATE shop_cart SET orders_state=#{ordersState} WHERE spid=#{spid}
+	</update>
+	
+	<select id="findProductPriceByProductIdAndProductType" resultType="java.lang.Double">
+		SELECT tb.price FROM 
+		<include refid="know_table"></include>
+	</select>
+	
+	<!-- 批量修改 -->
+	<update id="updateStateByIds">
+		UPDATE shop_cart SET orders_state=#{unpaid} WHERE spid IN 
+		<foreach item="spid" collection="spids" open="(" separator="," close=")">
+            #{spid}
+        </foreach>
+	</update>
+	
+	<update id="updateNumberBySpid">
+		UPDATE shop_cart SET number=#{number} WHERE spid=#{spid}
+	</update>
+	
+	<select id="findByIds" resultMap="BaseMap">
+		SELECT sc.* FROM shop_cart sc WHERE spid IN 
+		<foreach item="spid" collection="spids" open="(" separator="," close=")">
+            #{spid}
+        </foreach>
+	</select>
+	
+	<update id="updateStateAndNumAndTimeById" parameterType="com.party.domain.ShopCart">
+		UPDATE shop_cart SET orders_state=#{ordersState},ctime=#{ctime},orders_num=#{ordersNum} 
+		WHERE spid=#{spid}
+	</update>
+	
+	<select id="findByShopCartMsg" parameterType="com.party.domain.ShopCart" resultMap="BaseMap">
+		SELECT * FROM shop_cart sp WHERE sp.product_type=#{productType} 
+		AND sp.product_id=#{productId} 
+		AND sp.orders_state=#{ordersState}
+		AND admin_id=#{admin.aid}
+	</select>
+	
+	<update id="updateNumberById" parameterType="java.lang.Integer">
+		UPDATE shop_cart SET number=#{number} WHERE spid=#{spid}
+	</update>
+	
+</mapper>

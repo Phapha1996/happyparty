@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 帖子的Mapper -->
+
+<mapper namespace="com.party.orders.mapper.DiscussMapper">
+
+	<resultMap type="com.party.domain.Discuss" id="BaseMap">
+		<id column="did" property="did"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"/>
+		<result column="content" property="content"/>
+		<result column="ctime" property="ctime"/>
+		<association property="user" javaType="com.party.domain.User">
+			<id column="id" property="id"/>
+			<result column="username" property="username"/>
+			<result column="nickname" property="nickname"/>
+			<result column="icon" property="icon"/>
+			<result column="integral" property="integral"/>
+		</association>
+	</resultMap>
+	
+	<!-- 动态分辨是哪一张商品表 -->
+	<sql id="know_table">
+		<if test="productType=='二级服务'">
+			serve tb ON (tb.sid=d.product_id AND d.product_type='二级服务')
+		</if>
+		<if	test="productType=='场地'">
+			site tb ON (tb.siid=d.product_id AND d.product_type='场地') 
+		</if>
+		<if	test="productType=='场地布置'">
+			dec_product tb ON (tb.dpid=d.product_id AND d.product_type='场地布置') 
+		</if>
+		<if	test="productType=='聚会套餐'">
+			set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') 
+		</if>
+	</sql>
+	
+	<insert id="save" parameterType="com.party.domain.Discuss">
+		INSERT INTO discuss(product_id,product_type,ctime,content,user_id) 
+		VALUES (#{productId},#{productType},#{ctime},#{content},#{user.id})
+	</insert>
+	
+	<select id="countListByProductIdAndProductType" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM discuss d JOIN 
+		<include refid="know_table"></include>
+		WHERE d.product_id=#{productId}
+	</select>
+	
+	<select id="listByProductIdAndProductType" resultMap="BaseMap">
+		SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* 
+		FROM discuss d JOIN 
+		<include refid="know_table"></include>
+		JOIN user u ON d.user_id=u.id 
+		WHERE d.product_id=#{productId} 
+		ORDER BY d.ctime DESC 
+		LIMIT #{pageIndex},#{pageSize}
+	</select>
+	
+</mapper>

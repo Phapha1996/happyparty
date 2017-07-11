@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.party.product.mapper.SiteMapper">
+	<!--  -->
+	<resultMap type="com.party.domain.Site" id="SiteBaseMapped">
+			<id column="siid" property="siid"/>
+			<result column="title" property="title"/>
+			<result column="price" property="price"/>
+			<result column="week_price" property="weekPrice"/>
+			<result column="city" property="city"/>
+			<result column="address" property="address"/>
+			<result column="room_num" property="room_num"/>
+			<result column="bed_num" property="bed_num"/>
+			<result column="apply" property="apply"/>
+			<result column="wechat" property="wechat"/>
+			<result column="tags" property="tags"/>
+			<result column="description" property="description"/>
+			<result column="facilities" property="facilities"/>
+			<result column="reference" property="reference"/>
+			<result column="remind" property="remind"/>
+			<result column="num" property="num"/>
+			<result column="sequence" property="sequence"/>
+			<result column="admin_id" property="admin_id"/>
+				
+				
+	<!-- 图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+		<id column="iid" property="iid"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"	/>
+		<result column="img_url" property="imgUrl"	/>
+		</collection>
+	
+	</resultMap>
+	
+	
+<select id="findByIdSite" resultMap="SiteBaseMapped" parameterType="int">
+select * from site s left join img i on i.product_type='site'
+and s.siid=i.product_id where s.siid=#{siid}
+	</select>
+
+
+<select id="findRandSite" resultMap="SiteBaseMapped" parameterType="int">
+SELECT * FROM site s left join img i on i.product_type='site'
+and s.siid=i.product_id
+ORDER BY RAND() LIMIT #{number}
+	</select>
+
+
+<select id="findAllSite" resultMap="SiteBaseMapped" parameterType="int">
+select * from site s join img i where i.product_type='site' 
+and s.siid=i.product_id
+order by sequence desc,siid desc limit #{start},#{size}
+	</select>
+	
+	
+<select id="selectLikeSite" resultMap="SiteBaseMapped" parameterType="int">
+select * from site s left join img i on i.product_type='site' where i.product_id=s.siid 
+<if test="city!=null"> <![CDATA[and city like #{city} ]]></if> 
+<if test="startValue!=null"> <![CDATA[and (price>=#{startValue} and  price<=#{endValue}) ]]></if> 
+<if test="startApply!=null"> <![CDATA[and (apply>=#{startApply} and apply<=#{endApply}) ]]></if> 
+order by sequence desc,siid desc
+limit #{start},#{size}
+	</select>
+	
+	<select id="countLikeByTitle" parameterType="java.lang.String" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM site s
+		WHERE s.title LIKE CONCAT('%',#{key},'%')
+	</select>
+
+	<select id="listLikeByTitle" resultMap="SiteBaseMapped">
+		SELECT s.*,i.* FROM site s LEFT JOIN img i
+		ON (i.product_type='site' AND i.product_id=s.siid)
+		WHERE s.title LIKE CONCAT('%',#{key},'%')
+		ORDER BY sequence DESC
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	
+</mapper>

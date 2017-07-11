@@ -1,0 +1,34 @@
+{
+  "rel": true,
+  "code": 200,
+  "msg": "获取成功",
+  "result": [{
+      "title": "嗨咪尼最高鸡密",
+      "name": "你的名字",
+      "img": "../img/catering-0.jpg",
+      "time": "2017-06-12 18:16",
+      "price":8
+    },
+    {
+      "title": "清田咖啡",
+      "name": "你的名字",
+      "img": "../img/catering-1.jpg",
+      "time": "2017-06-12 18:16",
+      "price":15
+    }, {
+      "title": "陶氏啤酒鱼",
+      "name": "你的名字",
+      "img": "../img/catering-2.jpg",
+      "time": "2017-06-12 18:16",
+      "price":30
+    },
+    {
+      "title": "比爱多披萨",
+      "name": "你的名字",
+      "img": "../img/catering-3.jpg",
+      "time": "2017-06-12 18:16",
+      "price":30
+    }
+  ],
+  "count": 57
+}

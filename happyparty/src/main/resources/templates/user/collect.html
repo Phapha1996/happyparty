@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>达人服务-潮聚</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<style>
+			.mui-pull-bottom-wrapper {text-align: center !important;color: #999 !important;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item{color:#999;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item.mui-active {font-weight: bold;border-bottom: 3px solid #000 !important;line-height: 36px;color:#000;}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{border-top:none;}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">我的收藏</h1>
+	</header>
+	<div class="mui-content  cj-bg-light-grey" >
+		<div id="slider" class="mui-slider mui-fullscreen mui-content-phone">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll cj-bg-white">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+									户外场地
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+									达人服务
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+									包车服务
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+									餐饮服务
+					</a>
+					<a class="mui-control-item" href="#item5mobile">
+									聚会套餐
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div id="scroll1" class=" mui-scroll-wrapper">
+						<div class="mui-scroll" >
+							<ul  class="mui-table-view" id="siteList">
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll2" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="personList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item3mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="carList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item4mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="cateringList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item5mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="mealList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script type="text/html" id="siteTpl">
+		<% for(var i=0;i<result.length;i++){
+						include('site',result[i]);
+				}
+		%>
+	</script>
+	<script type="text/html" id="personTpl">
+		<% for(var i=0;i<result.length;i++){
+						include('service',result[i]);
+				}
+		%>
+	</script>
+	<script type="text/html" id="carTpl">
+		<% for(var i=0;i<result.length;i++){
+						include('service',result[i]);
+				}
+		%>
+	</script>
+	<script type="text/html" id="cateringTpl">
+		<% for(var i=0;i<result.length;i++){
+						include('catering',result[i]);
+				}
+		%>
+	</script>
+	<script type="text/html" id="mealTpl">
+		<% for(var i=0;i<result.length;i++){
+						include('meal',result[i]);
+				}
+		%>
+	</script>
+	<script type="text/html" id="site">
+
+			<li class="mui-table-view-cell mui-media">
+				<a href="/site/detail?id=<%==site.siid%>">
+					<img class="mui-media-object mui-pull-left" src="<%==imgs[0].imgUrl%>">
+					<div class="mui-media-body">
+							<%==site.title %>
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%";>
+								<span style="color: #dd524d;">￥<%==site.price %>&nbsp;</span>
+								<span class="mui-pull-right">
+									<button type="button"  data-id="<%==coid%>"   class="mui-btn mui-min-bth collect-delete">删除</button>
+								</span>
+							</p>
+						</p>
+					</div>
+				</a>
+			</li>
+
+	</script>
+	<script type="text/html" id="service">
+
+			<li class="mui-table-view-cell mui-media">
+				<a href="/service/detail?sid=<%==serve.sid%>">
+					<img class="mui-media-object mui-pull-left" src="<%==imgs[0].imgUrl%>">
+					<div class="mui-media-body">
+							<%==site.title %>
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%";>
+								<span style="color: #dd524d;">￥<%==site.price %>&nbsp;</span>
+								<span class="mui-pull-right">
+									<button type="button"  data-id="<%==coid%>"   class="mui-btn mui-min-bth collect-delete">删除</button>
+								</span>
+							</p>
+						</p>
+					</div>
+				</a>
+			</li>
+	</script>
+	<script type="text/html" id="catering">
+
+			<li class="mui-table-view-cell mui-media">
+				<a href="/catering/detail?sid=<%==serve.sid%>">
+					<img class="mui-media-object mui-pull-left" src="<%==imgs[0].imgUrl%>">
+					<div class="mui-media-body">
+							<%==site.title %>
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%";>
+								<span style="color: #dd524d;">￥<%==site.price %>&nbsp;</span>
+								<span class="mui-pull-right">
+									<button type="button"   data-id="<%==coid%>"   class="mui-btn mui-min-bth collect-delete">删除</button>
+								</span>
+							</p>
+						</p>
+					</div>
+				</a>
+			</li>
+	</script>
+	<script type="text/html" id="meal">
+
+			<li class="mui-table-view-cell mui-media">
+				<a href="/catering/detail?sid=<%==serve.sid%>">
+					<img class="mui-media-object mui-pull-left" src="<%==imgs[0].imgUrl%>">
+					<div class="mui-media-body">
+							<%==site.title %>
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%";>
+								<span style="color: #dd524d;">￥<%==site.price %>&nbsp;</span>
+								<span class="mui-pull-right">
+									<button type="button"   data-id="<%==coid%>"   class="mui-btn mui-min-bth collect-delete">删除</button>
+								</span>
+							</p>
+						</p>
+					</div>
+				</a>
+			</li>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/mui.pullToRefresh.js"></script>
+	<script src="..//js/common/mui.pullToRefresh.material.js"></script>
+	<script src="..//js/user/collect.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.mui-pull-bottom-wrapper {
+  text-align: center !important;
+  color: #999 !important;
+}
+
+#sliderSegmentedControl .mui-scroll .mui-control-item {
+  color: #999;
+}
+
+#sliderSegmentedControl .mui-scroll .mui-control-item.mui-active {
+  font-weight: bold;
+  border-bottom: 3px solid #000 !important;
+  line-height: 36px;
+  color: #000;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+  border-top: none;
+}
+.mui-control-content{background-color: white;min-height:200px;}
+.mui-control-content .mui-loading {margin-top: 50px;}
+.cj-serives-item{width:100%;height:120px;margin-top:8px;}
+.cj-serives-item .cj-serives-item-info div{color:#fff;margin-left:20px;}
+.cj-serives-item-price{margin-top:2px;}

@@ -1,0 +1,32 @@
+#Server Configuration
+server:
+  port: 8080
+  context-path: /
+
+
+#Logback Configuration
+logging:
+  config: classpath:logback.xml
+
+
+#spring Configuration
+spring:
+  datasource:
+    url: jdbc:mysql://47.94.150.49:3306/happyparty?useUnicode=true&amp;characterEncoding=UTF-8
+    username: root
+    password: G7oCMo4EzSlg
+    driver-class-name: com.mysql.jdbc.Driver
+    tomcat:
+      initial-size: 3
+      min-idle: 100
+      max-active: 300
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: false
+      test-on-return: false
+
+#Mybatis Configuration
+mybatis:
+  mapper-locations: classpath*:mybatis/mapper/*.xml

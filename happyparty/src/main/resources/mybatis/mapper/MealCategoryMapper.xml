@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-6-20 -->
+<!-- email:1115054416@qq.com  -->
+<mapper namespace="com.party.product.mapper.MealCategoryMapper">
+	<resultMap type="com.party.domain.MealCategory" id="baseMap">
+		<id column="mcid" property="mcid" />
+		<result column="cat_name" property="categoryName" />
+		<result column="sequence" property="sequence" />
+		<!-- 图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+			<id column="iid" property="iid" />
+			<result column="product_type" property="productType" />
+			<result column="product_id" property="productId" />
+			<result column="img_url" property="imgUrl" />
+		</collection>
+	</resultMap>
+	<!-- 根据排序序号排序的sql片段-->
+	<sql id="orderByandPage">
+		ORDER BY sequence DESC
+		LIMIT #{startIndex},#{pageSize}
+	</sql>
+	
+	<select id="findById" parameterType="int" resultMap="baseMap">
+		SELECT * FROM meal_category mc LEFT JOIN img i
+		ON (i.product_type='套餐类型' AND i.product_id=mc.mcid)
+		WHERE mc.mcid=#{mcid}
+	</select>
+	
+	<select id="countList" resultType="int">
+		SELECT COUNT(*) FROM meal_category		
+	</select>
+	
+	<select id="list" resultMap="baseMap">
+		SELECT * FROM meal_category mc LEFT JOIN img i
+		ON (i.product_type='套餐类型' AND i.product_id=mc.mcid)
+		<include refid="orderByandPage"></include>
+	</select>
+	
+</mapper>

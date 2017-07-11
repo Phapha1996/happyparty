@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.party.decoration.mapper.DecorationMapper">
+	<!--  -->
+	<resultMap type="com.party.domain.Decoration" id="DecorationBaseMapped">
+			<id column="did" property="did"/>
+			<result column="title" property="title"/>
+			<result column="city" property="city"/>
+			<result column="tags" property="tags"/>
+			<result column="details" property="details"/>
+			<result column="sequence" property="sequence"/>
+			<result column="bottom_price" property="bottom_price"/>
+			<result column="price" property="price"/>
+			<result column="theme_id" property="theme_id"/>
+			<result column="admin_id" property="admin_id"/>
+				
+	<!-- 图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+		<id column="iid" property="iid"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"	/>
+		<result column="img_url" property="imgUrl"	/>
+		</collection>
+	
+	
+	
+	</resultMap>
+	
+	<!-- 查询场地布置下面的商品Map -->
+	<resultMap type="com.party.domain.DecorationProduct" id="DecorationProductBaseMap">
+		<id property="dpid" column="dpid"/>
+		<result property="title" column="title"/>
+		<result property="description" column="description"/>
+		<result property="number" column="number"/>
+		<result property="price" column="price"/>
+		<result property="category_id" column="categoryId"/>
+		<result property="decoration_id" column="decorationId"/>
+		<!-- 映射商家 -->
+		<association property="admin" javaType="com.party.domain.Admin">
+			<id column="aid" property="aid"/>
+			<result column="account" property="account"/>
+			<result column="password" property="password"/>
+			<result column="phone_number" property="phoneNumber"/>
+			<result column="email" property="email"/>
+			<result column="cdate" property="cdate"/>
+		</association>
+		<!-- 映射图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+			<id column="iid" property="iid"/>
+			<result column="product_type" property="productType"/>
+			<result column="product_id" property="productId"	/>
+			<result column="img_url" property="imgUrl"	/>
+		</collection>
+	</resultMap>
+<!-- DMI sql Start -->	
+	<!-- list基础查询 -->
+	<sql id="list">
+		SELECT * FROM decoration d LEFT JOIN img i
+		ON (i.product_type='布置' AND i.product_id=d.did)
+	</sql>
+	<!-- 分页逻辑 -->
+	<sql id="page">
+		<if test="startIndex!=null">
+			<if test="pageSize!=null">
+				LIMIT #{startIndex},#{pageSize}
+			</if>
+		</if>
+	</sql>
+	<!-- 规整排序逻辑 -->
+	<sql id="orderBy">
+		ORDER BY d.sequence DESC
+	</sql>
+	<!-- 级联admin表 -->
+	<sql id="joinAdmin">
+		<if test="adminId!=null">
+			JOIN admin a ON a.aid=d.admin_id
+		</if>
+	</sql>
+	<!-- 给予admin条件 -->
+	<sql id="whereAdmin">
+		<if test="adminId!=null">
+			WHERE a.aid=#{adminId}
+		</if>
+	</sql>
+<!-- DMI sql End -->	
+	
+	
+	
+<select id="selectThemeDecoration" resultMap="DecorationBaseMapped" parameterType="int">
+select i.img_url,d.did,d.title,d.city,d.tags from decoration d,img i 
+where i.product_type='布置' and i.product_id=d.did
+and d.theme_id=#{thid}
+order by d.sequence desc,d.did desc limit #{start},#{size}
+	</select>
+	
+
+<select id="selectByIdDecoration" resultMap="DecorationBaseMapped" parameterType="int">
+select * from decoration d,img i 
+where i.product_type='布置' and i.product_id=d.did
+and d.did=#{did}
+	</select>
+	
+<select id="selectRandDecoration" resultMap="DecorationBaseMapped" parameterType="int">
+select i.img_url,d.did,d.title,d.city,d.tags from decoration d,img i 
+where i.product_type='布置' and i.product_id=d.did
+and d.theme_id=#{thid} ORDER BY RAND() LIMIT #{size}
+	</select>
+
+	<!-- 根据场地布置的id查询场地布置的商品，映射：图片、商家 -->
+	<select id="findByProductId" resultMap="DecorationProductBaseMap" parameterType="java.lang.Integer">
+		SELECT dp.*,a.email,a.phone_number,i.* FROM 
+		dec_product dp JOIN decoration d ON dp.decoration_id=d.did 
+		JOIN admin a ON a.aid=d.admin_id
+		LEFT JOIN img i ON (i.product_type='场地布置' AND i.product_id=dp.dpid)
+		WHERE dp.dpid=#{dpid} 
+	</select>
+	
+	<select id="countListDecorationLikeByTitle" resultType="int">
+		SELECT COUNT(*) FROM decoration d 
+		WHERE d.title LIKE CONCAT('%',#{key},'%')
+	</select>
+
+	<select id="listDecorationLikeByTitle" resultMap="DecorationBaseMapped">
+		<include refid="list"></include>
+		WHERE d.title LIKE CONCAT('%',#{key},'%')
+		<include refid="orderBy"></include>
+		<include refid="page"></include>
+	</select>
+	
+</mapper>

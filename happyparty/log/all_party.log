@@ -1,0 +1,499 @@
+[2017-07-06 12:56:28][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 10712 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 12:56:28][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 12:56:39][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 12.004 seconds (JVM running for 12.982)
+[2017-07-06 12:57:37][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 10764 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 12:57:37][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 12:57:48][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 11.773 seconds (JVM running for 12.676)
+[2017-07-06 12:58:39][INFO ][http-nio-8080-exec-1][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"d6d8fc5ec6ef40aa86dab9de572bb851","templateId":"89570","to":"18978323457","param":"阿萨德,15678390463,6"}}
+[2017-07-06 14:34:45][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 8904 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 14:34:45][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 14:34:56][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 10.869 seconds (JVM running for 11.851)
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM play WHERE ptype=? ORDER BY pid DESC 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: home(String)
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM recommend ORDER BY reid DESC 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:35:00][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM play WHERE ptype=? ORDER BY pid DESC 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: home(String)
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM recommend ORDER BY reid DESC 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:35:04][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:35:34][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: INSERT INTO Custom(cuid,cu_type,cu_area,cu_time,cu_people_number,cu_user,cu_phone,cu_remark,cu_budget,cu_team) VALUES(?,?,?,?,?,?,?,?,?,?) 
+[2017-07-06 14:35:34][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), (String), null, 2017-07-06(String), 189(String), xxx(String), 18978323457(String), xx(String), 8000(String), xxx(String)
+[2017-07-06 14:35:34][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==    Updates: 1
+[2017-07-06 14:35:34][INFO ][http-nio-8080-exec-4][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"d6d8fc5ec6ef40aa86dab9de572bb851","templateId":"89570","to":"18978323457","param":"xxx,18978323457,189"}}
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM play WHERE ptype=? ORDER BY pid DESC 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: home(String)
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM recommend ORDER BY reid DESC 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:36:38][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM play WHERE ptype=? ORDER BY pid DESC 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: home(String)
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM recommend ORDER BY reid DESC 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:37:10][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:37:12][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:39:44][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 8904 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 14:39:44][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 14:39:48][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 4.206 seconds (JVM running for 304.536)
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:39:51][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:39:57][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:39:57][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:39:57][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:39:57][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:39:57][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:39:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:39:59][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:40:00][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:42:30][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:42:35][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:43:58][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:44:15][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:45:19][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:45:55][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:46:06][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:46:53][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 2(Integer)
+[2017-07-06 14:46:56][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:47:00][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:48:35][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:28][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:29][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id JOIN admin a ON a.aid=sm.admin_id WHERE sm.smid=? 
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') ORDER BY RAND() LIMIT ? 
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 3(Integer)
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') WHERE d.product_id=? 
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') JOIN user u ON d.user_id=u.id WHERE d.product_id=? ORDER BY d.ctime DESC LIMIT ?,? 
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 3(Integer)
+[2017-07-06 14:49:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:38][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id JOIN admin a ON a.aid=sm.admin_id WHERE sm.smid=? 
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') ORDER BY RAND() LIMIT ? 
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 3(Integer)
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') WHERE d.product_id=? 
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') JOIN user u ON d.user_id=u.id WHERE d.product_id=? ORDER BY d.ctime DESC LIMIT ?,? 
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 3(Integer)
+[2017-07-06 14:49:39][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:41][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id JOIN admin a ON a.aid=sm.admin_id WHERE sm.smid=? 
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') ORDER BY RAND() LIMIT ? 
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 3(Integer)
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-8][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') WHERE d.product_id=? 
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') JOIN user u ON d.user_id=u.id WHERE d.product_id=? ORDER BY d.ctime DESC LIMIT ?,? 
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 3(Integer)
+[2017-07-06 14:49:43][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:44][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id JOIN admin a ON a.aid=sm.admin_id WHERE sm.smid=? 
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') ORDER BY RAND() LIMIT ? 
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 3(Integer)
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') WHERE d.product_id=? 
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') JOIN user u ON d.user_id=u.id WHERE d.product_id=? ORDER BY d.ctime DESC LIMIT ?,? 
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 3(Integer)
+[2017-07-06 14:49:46][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:48][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id JOIN admin a ON a.aid=sm.admin_id WHERE sm.smid=? 
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-7][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') ORDER BY RAND() LIMIT ? 
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 3(Integer)
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') WHERE d.product_id=? 
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.id,u.username,u.nickname,u.icon,u.integral,d.*,tb.* FROM discuss d JOIN set_meal tb ON (tb.smid=d.product_id AND d.product_type='聚会套餐') JOIN user u ON d.user_id=u.id WHERE d.product_id=? ORDER BY d.ctime DESC LIMIT ?,? 
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 3(Integer)
+[2017-07-06 14:49:49][DEBUG][http-nio-8080-exec-2][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:49:51][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM meal_category 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM meal_category mc LEFT JOIN img i ON (i.product_type='套餐类型' AND i.product_id=mc.mcid) ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 2(Integer)
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm WHERE sm.category_id=? 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer)
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id WHERE sm.category_id=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 0(Integer), 5(Integer)
+[2017-07-06 14:50:32][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM play WHERE ptype=? ORDER BY pid DESC 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: home(String)
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT * FROM recommend ORDER BY reid DESC 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT COUNT(*) FROM set_meal sm 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i ON (i.product_id=sm.smid AND i.product_type='聚会套餐') LEFT JOIN meal_category mct ON mct.mcid=sm.category_id ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 3(Integer)
+[2017-07-06 14:50:36][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 2
+[2017-07-06 15:16:59][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 8904 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 15:16:59][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 15:17:03][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 3.443 seconds (JVM running for 2538.955)
+[2017-07-06 15:17:13][INFO ][http-nio-8080-exec-10][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"1c3eb727d2f745539f11473eff201c11","templateId":"88623","to":"18978323457","param":"122048"}}
+[2017-07-06 15:20:38][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:20:38][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:20:38][DEBUG][http-nio-8080-exec-4][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:21:01][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on DESKTOP-5IH8VGC with PID 8904 (H:\java\web\happyparty\target\classes started by aixp in H:\java\web\happyparty)
+[2017-07-06 15:21:01][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 15:21:04][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 2.983 seconds (JVM running for 2780.429)
+[2017-07-06 15:21:24][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:21:24][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:21:24][DEBUG][http-nio-8080-exec-1][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:22:38][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:22:38][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:22:38][DEBUG][http-nio-8080-exec-5][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:23:09][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:23:09][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:23:09][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:23:11][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:23:11][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:23:11][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:23:14][INFO ][http-nio-8080-exec-9][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"1c3eb727d2f745539f11473eff201c11","templateId":"88623","to":"18978323457","param":"237200"}}
+[2017-07-06 15:24:11][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:24:11][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:24:11][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:24:14][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:24:14][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:24:14][DEBUG][http-nio-8080-exec-10][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:24:15][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:24:15][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:24:15][DEBUG][http-nio-8080-exec-9][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:24:26][INFO ][http-nio-8080-exec-1][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"1c3eb727d2f745539f11473eff201c11","templateId":"88623","to":"18978323457","param":"375572"}}
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: select count(id) from User where username=? 
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18978323457(String)
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-3][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 15:24:50][INFO ][http-nio-8080-exec-6][com.party.user.service.impl.UserServiceImpl.addUser:47]:增加用户中
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: INSERT INTO User(id,nickname,username,password,icon,integral,regdate,is_activate) VALUES(?,?,?,?,?,?,?,?) 
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: null, pjf(String), 18978323457(String), e10adc3949ba59abbe56e057f20f883e(String), D:\(String), 0(Integer), 2017-07-06 15:24:50.855(Timestamp), true(Boolean)
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==    Updates: 1
+[2017-07-06 15:24:50][INFO ][http-nio-8080-exec-6][com.party.user.service.impl.UserServiceImpl.addUser:51]:增加用户成功
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: INSERT INTO user_role(urid,user_id,role_id) VALUES(?,?,?) 
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 0(Integer), 9(Integer), 1(Integer)
+[2017-07-06 15:24:50][DEBUG][http-nio-8080-exec-6][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==    Updates: 1
+[2017-07-06 19:51:49][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplicationTests on jessica-PC with PID 9160 (started by jessica in F:\happyparty)
+[2017-07-06 19:51:49][INFO ][main][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 19:52:00][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplicationTests in 11.251 seconds (JVM running for 12.57)
+[2017-07-06 19:57:55][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplication on jessica-PC with PID 3464 (F:\happyparty\target\classes started by jessica in F:\happyparty)
+[2017-07-06 19:57:55][INFO ][restartedMain][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 19:58:06][INFO ][restartedMain][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplication in 12.282 seconds (JVM running for 12.895)
+[2017-07-06 19:58:36][INFO ][http-nio-8080-exec-1][com.party.SMS.client.JsonReqClient.templateSMS:445]:{"templateSMS":{"appId":"1c3eb727d2f745539f11473eff201c11","templateId":"88623","to":"15678390463","param":"550278"}}
+[2017-07-06 19:59:24][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplicationTests on jessica-PC with PID 3164 (started by jessica in F:\happyparty)
+[2017-07-06 19:59:24][INFO ][main][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 19:59:29][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplicationTests in 4.929 seconds (JVM running for 5.7)
+[2017-07-06 20:00:46][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplicationTests on jessica-PC with PID 7448 (started by jessica in F:\happyparty)
+[2017-07-06 20:00:46][INFO ][main][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 20:00:52][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplicationTests in 5.492 seconds (JVM running for 6.22)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.*,r.* FROM user u LEFT JOIN user_role ur ON u.id=ur.user_id LEFT JOIN role r ON r.roid=ur.role_id WHERE username=? 
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18778381360(String)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT s.*,i.*,sc.* FROM serve s LEFT JOIN img i ON (i.product_type='��������' AND i.product_id=s.sid) JOIN ser_category sc ON sc.scid=s.ser_category_id WHERE s.type=? AND sc.scid=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: ���˷���(String), 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: UPDATE shop_cart SET orders_state=? WHERE spid IN ( ? , ? , ? ) 
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 1(Integer), 2(Integer), 3(Integer)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==    Updates: 0
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT tb.price FROM dec_product tb WHERE tb.dpid=? 
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sc.* FROM shop_cart sc WHERE spid IN ( ? , ? , ? ) 
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 3(Integer), 4(Integer)
+[2017-07-06 20:00:58][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 20:00:58][INFO ][main][com.party.orders.service.impl.ShopBusinessServiceImpl.pay:235]:���ܹ���Ҫ֧��0.0Ԫ
+[2017-07-06 20:28:52][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarting:48]:Starting BoringPartyApplicationTests on jessica-PC with PID 5956 (started by jessica in F:\happyparty)
+[2017-07-06 20:28:53][INFO ][main][org.springframework.boot.SpringApplication.logStartupProfileInfo:659]:No active profile set, falling back to default profiles: default
+[2017-07-06 20:28:57][INFO ][main][org.springframework.boot.StartupInfoLogger.logStarted:57]:Started BoringPartyApplicationTests in 4.896 seconds (JVM running for 5.634)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT u.*,r.* FROM user u LEFT JOIN user_role ur ON u.id=ur.user_id LEFT JOIN role r ON r.roid=ur.role_id WHERE username=? 
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 18778381360(String)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT s.*,i.*,sc.* FROM serve s LEFT JOIN img i ON (i.product_type='��������' AND i.product_id=s.sid) JOIN ser_category sc ON sc.scid=s.ser_category_id WHERE s.type=? AND sc.scid=? ORDER BY sequence DESC LIMIT ?,? 
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: ���˷���(String), 1(Integer), 0(Integer), 5(Integer)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 3
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: UPDATE shop_cart SET orders_state=? WHERE spid IN ( ? , ? , ? ) 
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 1(Integer), 2(Integer), 3(Integer)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==    Updates: 0
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT tb.price FROM dec_product tb WHERE tb.dpid=? 
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 1(Integer)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 1
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==>  Preparing: SELECT sc.* FROM shop_cart sc WHERE spid IN ( ? , ? , ? ) 
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:==> Parameters: 2(Integer), 3(Integer), 4(Integer)
+[2017-07-06 20:28:59][DEBUG][main][org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug:145]:<==      Total: 0
+[2017-07-06 20:28:59][INFO ][main][com.party.orders.service.impl.ShopBusinessServiceImpl.pay:235]:���ܹ���Ҫ֧��0.0Ԫ

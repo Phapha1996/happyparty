@@ -1,0 +1,78 @@
+{
+  "rel": true,
+  "code": 200,
+  "msg": "获取成功",
+  "result": [{
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "场地布置",
+      "img": "img/goods-1.jpg",
+      "price": "600",
+      "status":0,
+      "num":1,
+      "time":"2017-06-12 09:08"
+    },
+    {
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "场地",
+      "img": "img/goods-2.jpg",
+      "price": "600",
+      "status":1,
+      "num":1,
+      "time":"2017-06-12 09:08"
+    }, {
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "场地",
+      "img": "img/goods-3.jpg",
+      "price": "600",
+      "status":2,
+      "num":1,
+      "time":"2017-06-12 09:08"
+    },
+    {
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "达人服务",
+      "img": "img/goods-1.jpg",
+      "price": "600",
+      "status":3,
+      "num":1,
+      "time":"2017-06-12 09:08"
+    },  {
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "包车服务",
+      "img": "img/goods-2.jpg",
+      "price": "600",
+      "status":4,
+      "num":1,
+      "time":"2017-06-12 09:08"
+      },
+      {
+        "title": "惠州双月湾 美丽的海港小镇",
+        "type": "包车服务",
+        "img": "img/goods-3.jpg",
+        "price": "600",
+        "status":5,
+        "num":1,
+        "time":"2017-06-12 09:08"
+      },
+      {
+        "title": "惠州双月湾 美丽的海港小镇",
+        "type": "场地布置",
+        "img": "img/goods-1.jpg",
+        "price": "700",
+        "status":6,
+        "num":1,
+        "time":"2017-06-12 09:08"
+      }
+      ,
+      {
+        "title": "惠州双月湾 美丽的海港小镇",
+        "type": "达人服务",
+        "img": "img/goods-3.jpg",
+        "price": "700",
+        "status":7,
+        "num":1,
+        "time":"2017-06-12 09:08"
+      }
+  ],
+  "count": 57
+}

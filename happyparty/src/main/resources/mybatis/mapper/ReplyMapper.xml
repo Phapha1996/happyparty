@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 回复的Mapper -->
+
+<mapper namespace="com.party.topic.mapper.ReplyMapper">
+	<resultMap type="com.party.domain.Reply" id="ReplyBaseMap">
+		<id column="tid" property="tid"/>
+		<result column="title" property="title"/>
+		<result column="ctime" property="ctime"/>
+		<result column="content" property="content"/>
+		<result column="click_like" property="clickLike"/>
+		<result column="sequence" property="sequence"/>
+		<association property="user" javaType="com.party.domain.User">
+			<id column="id" property="id"/>
+			<result column="username" property="username"/>
+			<result column="nickname" property="nickname"/>
+			<result column="icon" property="icon"/>
+			<result column="integral" property="integral"/>
+		</association>
+	</resultMap>
+	
+	<insert id="save" parameterType="com.party.domain.Reply">
+		<selectKey order="AFTER" keyProperty="rid" resultType="java.lang.Integer">
+    		SELECT LAST_INSERT_ID()
+    	</selectKey>
+		INSERT INTO reply(content,ctime,topic_id,user_id)
+		VALUES(#{content},#{ctime},#{topic.tid},#{user.id})
+	</insert>
+	
+	<select id="countListByTopicId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM reply r JOIN topic t
+		ON t.tid=r.topic_id
+		WHERE t.tid=#{tid}
+	</select>	
+	
+	<select id="listByTopicId" resultMap="ReplyBaseMap">
+		SELECT r.*,u.* FROM reply r JOIN topic t
+		ON t.tid=r.topic_id	JOIN user u ON r.user_id=u.id
+		WHERE t.tid=#{tid}
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="findById" parameterType="java.lang.Integer" resultMap="ReplyBaseMap">
+		SELECT u.id,u.username,u.nickname,u.icon,u.integral,r.*
+		FROM reply r JOIN user u ON u.id=r.user_id
+		WHERE r.rid=#{rid}
+	</select>
+	
+</mapper>

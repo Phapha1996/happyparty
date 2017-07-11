@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- SpringSecurity的Mapper -->
+
+<mapper namespace="com.party.user.mapper.SysUserMapper">
+	<resultMap type="com.party.domain.User" id="UserBaseMapped">
+		<id column="id" property="id"/>
+		<result column="username" property="username"/>
+		<result column="password" property="password"	/>
+		<result column="nickname" property="nickname"/>
+		<result column="is_activate" property="activate"/>
+		<result column="integral" property="integral"/>
+		<result column="regdate" property="regdate"/>
+		<result column="icon" property="icon"/>
+		<collection property="roles" ofType="com.party.domain.Role">
+			<id column="roid" property="roid"/>
+			<result column="role_name" property="roleName"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 把角色也映射 -->
+	<select id="findByUsername" parameterType="java.lang.String" resultMap="UserBaseMapped" >
+		SELECT u.*,r.* FROM user u 
+		LEFT JOIN user_role ur ON u.id=ur.user_id
+		LEFT JOIN role r ON r.roid=ur.role_id
+		WHERE username=#{username}
+	</select>
+</mapper>

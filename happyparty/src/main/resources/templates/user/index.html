@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心-潮聚</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/common/mui.min.css">
+		<link rel="stylesheet" href="../css/common/mui.extra.css">
+		<link rel="stylesheet" href="../css/common/common.css">
+	</head>
+
+	<body class="cj-bg-light-grey">
+		<div class="mui-content cj-profile-header ">
+
+			<div class="cj-line-60"></div>
+			<div class="cj-profile-head-info">
+
+				<div class="cj-head-img mui-pull-left">
+					<!--头像-->
+				</div>
+
+				<div class="cj-head-left mui-pull-left">
+					<div class="cj-profile-name" id="userName">你的名字</div>
+					<div class="cj-profile-integration">
+						<span class="mui-badge mui-badge-warning" id="integral">积分:0</span>
+						<span class="mui-badge mui-badge-success" id="signIn">签到</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="cj-profile-nav">
+			<div class="mui-card">
+				<div class="mui-card-content">
+					<ul class="mui-table-view mui-grid-view mui-grid-9 cj-bg-white cj-none-border">
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="/user/order">
+								<div class="mui-media-body cj-profile-nav-item">订单</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="#">
+								<div class="mui-media-body cj-profile-nav-item">卡劵</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="/user/collect">
+								<div class="mui-media-body cj-profile-nav-item">收藏</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="#">
+								<div class="mui-media-body cj-profile-nav-item">发布</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="#">
+								<div class="mui-media-body cj-profile-nav-item">店铺</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell  mui-media mui-col-xs-2 mui-col-sm-2 cj-none-border cj-padded-0">
+							<a href="#">
+								<div class="mui-media-body cj-profile-nav-item">积分</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="mui-content cj-profile-list cj-bg-light-grey">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="/user/setting">
+							<span class=" cj-text-color-gray mui-icon-extra mui-icon-extra-class cj-text-size-18 cj-margin-r-10"></span>设置
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<!-- <li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class=" cj-text-color-gray mui-icon-extra mui-icon-extra-dictionary cj-text-size-18 cj-margin-r-10"></span>草稿箱
+						</a>
+					</li> -->
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="cj-text-color-gray mui-icon-extra mui-icon-extra-share cj-text-size-18 cj-margin-r-10"></span>分享
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">
+							<span class="cj-text-color-gray mui-icon-extra mui-icon-extra-peoples cj-text-size-18 cj-margin-r-10"></span>在线客服
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" id="loginOut">
+						<a class="mui-text-center cj-text-color-danger" href="#" >
+							退出登录
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer"></div>
+	 	<script src="../js/common/mui.min.js"></script>
+	 	<script src="../js/common/mui.href.js"></script>
+	 	<script src="../js/common/jquery.min.js"></script>
+	 	<script src="../js/common/footer.js"></script>
+		<script src="../js/user/index.js"></script>
+	</body>
+
+</html>

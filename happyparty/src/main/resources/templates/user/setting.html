@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>用户设置-潮聚</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/common/mui.min.css">
+		<link rel="stylesheet" href="../css/common/mui.extra.css">
+		<link rel="stylesheet" href="../css/common/common.css">
+		<style>
+					.upload {
+					width:100%;
+			    position: relative;
+			    cursor: pointer;
+			    border-radius: 4px;
+			    overflow: hidden;
+			    display: inline-block;
+			    *display: inline;
+			    *zoom: 1
+			}
+
+			.upload  input {
+			    position: absolute;
+			    font-size: 100px;
+			    right: 0;
+			    top: 0;
+			    opacity: 0;
+			    filter: alpha(opacity=0);
+			    cursor: pointer
+			}
+		</style>
+	</head>
+	<body class="cj-bg-light-grey">
+		<header class="mui-bar mui-bar-nav  mui-white-nav-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">设置</h1>
+		</header>
+		<div class="mui-content cj-bg-light-grey">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell upload">
+					<a id="cj-head" href="#" class="mui-navigate-right">
+							头像
+						<span class="mui-pull-right head">
+							<img class="cj-head-img mui-action-preview" id="head-img1" src="../img/head.jpg">
+						</span>
+					</a>
+					<input type="file" id="changeHead"  name="files" >
+				</li>
+				<li class="mui-table-view-cell" id="updateUserName">
+					<a class="">姓名<span class="mui-pull-right" id="userName">你的名字</span></a>
+				</li>
+				<!-- <li class="mui-table-view-cell" id="updateUserPhone">
+					<a class="">手机<span class="mui-pull-right" id="phone"></span></a>
+				</li> -->
+				</ul>
+			</div>
+
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" id="updateUserPassword">
+						<a class=""  href="#">修改密码</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="mui-card">
+				<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="">关于潮聚</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="">意见反馈</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+		<div id="footer"></div>
+	 	<script src="../js/common/mui.min.js"></script>
+	 	<script src="../js/common/mui.href.js"></script>
+	 	<script src="../js/common/jquery.min.js"></script>
+	 	<script src="../js/common/footer.js"></script>
+		<script src="../js/common/ajaxfileupload.js"></script>
+		<script src="../js/user/setting.js"></script>
+	</body>
+</html>

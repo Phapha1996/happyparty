@@ -1,0 +1,40 @@
+.cj-price-calenar {
+      width: 100%;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    .cj-price-calenar-box {
+      font-size: 13px;
+      width: 14%;
+      height: 50px;
+      display: inline-block;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    .cj-price-calenar-box .price {
+      font-size: 13px;
+    }
+
+    .cj-price-calenar-week {
+      color: #999;
+      width: 14%;
+      height: 30px;
+      display: inline-block;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .cj-price-calenar-title {
+      font-size: 13px;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+      background: rgb(239, 241, 245);
+    }
+
+    .cj-price-calenar-select-month {
+      color: #03a9f4;
+      font-size: 13px;
+    }

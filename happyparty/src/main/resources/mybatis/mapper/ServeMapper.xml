@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 服务的Mapper -->
+<!-- 包车服务、达人服务、餐饮服务统称为二级服务 -->
+
+<mapper namespace="com.party.product.mapper.ServeMapper">
+	<!-- 集合专用 -->
+	<resultMap type="com.party.domain.Serve" id="listBaseMap">
+		<id column="sid" property="sid"/>
+		<result column="type" property="type"/>
+		<result column="title" property="title"/>
+		<result column="city" property="city"/>
+		<result column="price" property="price"/>
+		<result column="details" property="details"/>
+		<result column="notes" property="notes"/>
+		<result column="wechat" property="wechat"/>
+		<result column="number" property="number"/>
+		<result column="sequence" property="sequence"/>
+		<!-- 板块映射 -->
+		<association property="serveCategory" javaType="com.party.domain.ServeCategory">
+			<id column="scid" property="scid"/>
+			<result column="cat_name" property="categoryName"/>
+		</association>
+		<!-- 图片映射 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+			<id column="iid" property="iid"/>
+			<result column="product_type" property="productType"/>
+			<result column="product_id" property="productId"/>
+			<result column="img_url" property="imgUrl"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 查询详细专用 -->
+	<resultMap type="com.party.domain.Serve" id="baseMap" extends="listBaseMap">
+		<!-- 商家映射 -->
+		<association property="admin" javaType="com.party.domain.Admin">
+			<id column="aid" property="aid"/>
+			<result column="account" property="account"/>
+			<result column="password" property="password"/>
+			<result column="phone_number" property="phoneNumber"/>
+			<result column="email" property="email"/>
+			<result column="cdate" property="cdate"/>
+		</association>
+	</resultMap>
+	
+	<!-- 根据排序序号排序的sql片段-->
+	<sql id="orderBy">
+		ORDER BY sequence DESC
+	</sql>
+	
+<!-- sql start -->
+	<select id="countList" resultType="java.lang.Integer" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM serve WHERE type=#{type}
+	</select>
+	
+	<select id="countListByCategory" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM serve s JOIN ser_category sc 
+		ON s.ser_category_id=sc.scid 
+		WHERE sc.scid=#{categoryId} 
+		AND s.type=#{type}
+	</select>
+
+	<!-- 考虑到后期不需要加分类，所以直接以硬编码形式加入二级服务 -->
+	<select id="list" resultMap="listBaseMap">
+		SELECT s.*,i.* FROM serve s LEFT JOIN img i 
+		ON (i.product_type='二级服务' AND i.product_id=s.sid) 
+		WHERE s.type=#{type} 
+		<include refid="orderBy"></include>
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="findById" resultMap="baseMap" parameterType="java.lang.Integer">
+		SELECT s.*,a.email,a.phone_number,a.aid,i.* FROM 
+		serve s JOIN admin a ON a.aid=s.admin_id 
+		LEFT JOIN img i ON (s.sid=i.product_id AND i.product_type='二级服务') 
+		WHERE s.sid=#{sid}
+	</select>
+	
+	<select id="listByCategoryId"  resultMap="listBaseMap">
+		SELECT s.*,i.*,sc.* FROM serve s LEFT JOIN img i 
+		ON (i.product_type='二级服务' AND i.product_id=s.sid) 
+		JOIN ser_category sc ON sc.scid=s.ser_category_id 
+		WHERE s.type=#{type} AND sc.scid=#{categoryId} 
+		<include refid="orderBy"></include>
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="countListLikeByTitle" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM serve s WHERE  s.title LIKE CONCAT('%',#{key},'%')
+	</select>	
+	
+	<select id="listLikeByTitle" resultMap="listBaseMap">
+		SELECT s.*,i.*,sc.* FROM serve s LEFT JOIN img i 
+		ON (i.product_type='二级服务' AND i.product_id=s.sid) 
+		JOIN ser_category sc ON sc.scid=s.ser_category_id 
+		WHERE s.title LIKE CONCAT('%',#{key},'%')
+		<include refid="orderBy"></include>
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+<!-- sql end -->
+</mapper>

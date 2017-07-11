@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+</head>
+<body>
+	<!-- <form method="POST" enctype="multipart/form-data" action="http://127.0.0.1:8080/party/user/changeicon"> -->
+	<form method="post" enctype="multipart/form-data" th:action="@{/user/changeIcon}">
+		文件1: <input type="file" name="files" /><br />
+		 <input type="submit" value="files" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>达人服务-潮聚</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<link rel="stylesheet" href="../css/serivce.css">
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">服务达人</h1>
+	</header>
+	<div class="mui-content  cj-bg-light-grey">
+		<div id="slider" class="mui-slider mui-fullscreen mui-content-phone">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll cj-bg-white" id="categoryNav">
+					<a class="mui-control-item mui-active" href="#item1mobile">全部</a>
+
+				</div>
+			</div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+					<div id="scroll1" class=" mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view mui-content-padded" >
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script id="item" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+			<a href="/service/detail?sid=<%==result[i].sid%>" class="cj-serives-item" style="display:block;background:url('<%==result[i].imgs.length>0?result[i].imgs[0].imgUrl:"../img/serives-0.jpg"%>');">
+				<div class="cj-line-60"></div>
+				<div class="cj-serives-item-info">
+					<div class="cj-text-weight"><%==result[i].title%></div>
+					<div class="cj-serives-item-price">￥<%==result[i].price%></div>
+				</div>
+			</a>
+		<%}%>
+	</script>
+	<script id="navTpl" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+			<a class="mui-control-item" href="#item<%==i+2 %>mobile">
+							<%==result[i].categoryName %>
+			</a>
+		<%}%>
+	</script>
+	<script id="listTpl" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+			<div id="item<%==i+2 %>mobile" class="mui-slider-item mui-control-content ">
+				<div id="scroll<%==i+2 %>" class=" mui-scroll-wrapper">
+					<div class="mui-scroll" data-id="<%==result[i].scid%>" >
+						<ul class="mui-table-view mui-content-padded" >
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/mui.pullToRefresh.js"></script>
+	<script src="..//js/common/mui.pullToRefresh.material.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="..//js/service/index.js"></script>
+</body>
+
+</html>

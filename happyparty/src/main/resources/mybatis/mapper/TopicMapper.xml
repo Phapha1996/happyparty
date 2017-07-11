@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 帖子的Mapper -->
+
+<mapper namespace="com.party.topic.mapper.TopicMapper">
+
+	<resultMap type="com.party.domain.Topic" id="TopicBaseMap">
+		<id column="tid" property="tid"/>
+		<result column="title" property="title"/>
+		<result column="ctime" property="cTime"/>
+		<result column="content" property="content"/>
+		<result column="sequence" property="sequence"/>
+		<!-- 商家映射 -->
+		<association property="admin" javaType="com.party.domain.Admin">
+			<id column="aid" property="aid"/>
+			<result column="phoneNumber" property="phoneNumber"/>
+			<result column="email" property="email"/>
+		</association>
+		<!-- 图片映射 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+			<id column="iid" property="iid"/>
+			<result column="product_type" property="productType"/>
+			<result column="product_id" property="productId"/>
+			<result column="img_url" property="imgUrl"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 根据排序序号排序的sql片段-->
+	<sql id="orderBy">
+		ORDER BY sequence DESC
+	</sql>
+	
+	<!-- sql start -->
+	<!-- <insert id="save" parameterType="com.party.domain.Topic">
+		<selectKey order="AFTER" keyProperty="tid" resultType="int">
+    		SELECT LAST_INSERT_ID()
+    	</selectKey>
+		INSERT INTO topic(title,ctime,user_id,content)
+		VALUES(#{title},#{cTime},#{user.id},#{content})
+	</insert> -->	
+	
+	<select id="countList" resultType="java.lang.Integer">
+		SELECT COUNT(*) FROM topic
+	</select>
+	
+	<select id="list" resultMap="TopicBaseMap">
+		SELECT t.*,a.email,a.phone_number,a.aid,i.* 
+		FROM topic t JOIN admin a ON t.admin_id=a.aid
+		LEFT JOIN img i ON (i.product_type='帖子' AND i.product_id=t.tid)
+		<include refid="orderBy"></include>
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="findById" resultMap="TopicBaseMap" parameterType="java.lang.Integer">
+		SELECT a.email,a.phone_number,a.aid,t.*,i.*
+		FROM topic t JOIN admin a ON t.admin_id=a.aid
+		LEFT JOIN img i ON (i.product_type='帖子' AND i.product_id=t.tid)
+		WHERE t.tid=#{tid}
+	</select>
+	
+	<!-- <delete id="deleteById" parameterType="java.lang.Integer">
+		DELETE FROM topic WHERE tid=#{tid}
+	</delete> -->
+	<!-- sql end -->
+</mapper>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>聚会清单-欢聚网</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/common/mui.min.css">
+  <link rel="stylesheet" href="css/common/mui.extra.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body class="cj-bg-white">
+  <header class="mui-bar mui-bar-nav mui-white-nav-bar">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">聚会清单</h1>
+  </header>
+  <div class="mui-content cj-bg-white " style="position: static;">
+    <div class="cj-car-total">
+      <div class="cj-car-total-select mui-pull-left  mui-checkbox mui-left">
+        <label>全选</label>
+        <input name="all" value="Item 1" type="checkbox">
+      </div>
+      <div class="cj-car-total-info mui-row">
+        <div class="mui-col-sm-9 mui-col-xs-9">
+          合计：￥<span id="totalPrice">0.00</span>
+        </div>
+        <div class="mui-col-sm-3 mui-col-xs-3 cj-button">
+          去结算
+        </div>
+      </div>
+    </div>
+    <div class="cj-car-scroll mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <div class="cj-car-list">
+          <div>
+            <form class="mui-input-group">
+              <div class="mui-input-row mui-checkbox mui-left cj-bg-light-grey">
+                <label>聚会场地</label>
+
+              </div>
+            </form>
+          </div>
+          <div id="siteList">
+
+						</div>
+          <p class="cj-no-goods">
+              <a>还有该商品去找一个吧</a>
+            </p>
+        </div>
+
+        <div class="cj-car-list">
+          <div>
+            <form class="mui-input-group">
+              <div class="mui-input-row mui-checkbox mui-left cj-bg-light-grey">
+                <label>场地布置</label>
+              </div>
+            </form>
+          </div>
+          <div id="layoutList">
+
+						</div>
+          <p class="cj-no-goods">
+              <a>还有该商品去找一个吧</a>
+            </p>
+        </div>
+        <div class="cj-car-list">
+          <div>
+            <form class="mui-input-group">
+              <div class="mui-input-row mui-checkbox mui-left cj-bg-light-grey">
+                <label>物品采购</label>
+              </div>
+            </form>
+          </div>
+          <div id="goodsList">
+
+  				</div>
+          <p class="cj-no-goods">
+              <a>还有该商品去找一个吧</a>
+            </p>
+        </div>
+
+        <div class="cj-car-list">
+          <div>
+            <form class="mui-input-group">
+              <div class="mui-input-row mui-checkbox mui-left cj-bg-light-grey">
+                <label>达人服务</label>
+              </div>
+            </form>
+          </div>
+          <div id="personList">
+
+  				</div>
+          <p class="cj-no-goods">
+              <a>还有该商品去找一个吧</a>
+            </p>
+        </div>
+
+        <div class="cj-car-list">
+          <div>
+            <form class="mui-input-group">
+              <div class="mui-input-row mui-checkbox mui-left cj-bg-light-grey">
+                <label>包车服务</label>
+              </div>
+            </form>
+          </div>
+          <div id="carList">
+
+					</div>
+          <p class="cj-no-goods">
+							<a>还有该商品去找一个吧</a>
+						</p>
+        </div>
+        <div class="cj-line-60"></div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script type="text/html" id="item">
+    <% for(var i=0;i<$data.length;i++){  %>
+    <div class="cj-car-item">
+      <div class="cj-car-item-select mui-checkbox mui-pull-left">
+        <input name="checkbox" value="Item 1" type="checkbox">
+      </div>
+      <div class="cj-car-item-right">
+        <div class="cj-item-info">
+          <div class="cj-item-info-img">
+            <img src="<% if($data[i].img!=null) print($data[i].img.imgUrl); %>" width="90px" height="90px">
+          </div>
+          <div class="cj-item-info-text">
+            <a href="#">
+             <div class="cj-title"><%==$data[i].title%></div>
+            </a>
+            <div>
+              <div class="cj-price mui-pull-left">￥<span class="price"><%==$data[i].price%></span></div>
+              <div class="cj-num">
+                <div class="mui-numbox mui-pull-right"  data-numbox-min='1' data-numbox-max='9' style="width:120px;height:25px;vertical-align:middle;">
+                  <button class="mui-btn-numbox-minus" type="button">-</button>
+                  <input data-id="<%==$data[i].spid%>" class="mui-input-numbox" value="<%==$data[i].number%>" type="number" style="padding:0;font-size:14px;line-height:20px;" />
+                  <button class="mui-btn-numbox-plus" type="button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cj-item-opt" >
+          <span class="deleteItem" data-id="<%==$data[i].spid%>"> <a class="mui-pull-right" href="#"><span style="font-size:16px;" class="mui-icon mui-icon-trash "></span>删除</a></span>
+        </div>
+      </div>
+    </div>
+    <%}%>
+  </script>
+  <script src="js/common/template-web.js"></script>
+  <script src="js/common/mui.min.js"></script>
+  <script src="js/common/mui.href.js"></script>
+  <script src="js/common/jquery.min.js"></script>
+  <script src="js/common/footer.js"></script>
+  <script src="js/order/order.js" ></script>
+</body>
+
+</html>

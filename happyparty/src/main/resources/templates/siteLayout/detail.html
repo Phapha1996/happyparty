@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>达人分享-欢聚网</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/common/mui.min.css">
+		<link rel="stylesheet" href="../css/common/mui.extra.css">
+		<link rel="stylesheet" href="../css/common/common.css">
+		<style>
+			.mui-table-view:before,
+			.mui-table-view:after {
+				background: none !important;
+			}
+		</style>
+	</head>
+
+	<body class="cj-bg-white">
+		<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">title</h1>
+		</header>
+
+		<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content cj-bg-white mui-scroll-wrapper mui-content-phone cj-car-scroll">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<div class="mui-content cj-margin-0 cj-bg-primary">
+					<div class="mui-card-content">
+						<img src="../img/card-2.jpg" id="headImg" alt="" width="100%" />
+						<div class="mui-card cj-site-detail-title cj-margin-0">
+							title
+						</div>
+					</div>
+				</div>
+				<!--数据列表-->
+				<div id="cardContainer">
+				</div>
+			</div>
+		</div>
+		<nav class="mui-bar mui-bar-tab cj-bg-white mui-bar-footer  cj-none-border cj-padded-0">
+			<a class="mui-tab-item" href="" id="goodDetail">
+				<button style="top:0;" type="button" class="mui-btn-primary mui-btn-block ">商品详情</button>
+			</a>
+		</nav>
+		<div class="cj-line-30"></div>
+		<div class="cj-line-30"></div>
+		<div class="cj-line-30"></div>
+		<script id="cardTpl" type="text/html">
+			<div class="mui-content cj-padded-15">
+				￥500起&nbsp;<span style="font-size:12px;">推荐适用，以下聚会</span>
+				<p>
+					<%
+						tag = tags.split("|");
+						for(var i=0;i<tag.length;i++){
+					 %>
+					<span class="mui-badge cj-text-color-white cj-bg-dark"><%==tag[i]%></span>
+					<%
+					}
+					%>
+				</p>
+			</div>
+			<ul class="mui-table-view cj-bg-white" >
+				<div class="cj-bg-white mui-content-padded">
+					<%==details%>
+				</div>
+			</ul>
+
+		</script>
+
+		<script src="../js/common/template-web.js"></script>
+		<script src="../js/common/mui.min.js"></script>
+		<script src="../js/common/mui.href.js"></script>
+		<script src="../js/common/jquery.min.js"></script>
+			<script src="../js/common/common.js"></script>
+		<script src="../js/siteLayout/detail.js"></script>
+	</body>
+
+</html>

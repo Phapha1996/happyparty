@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.party.product.mapper.CollectMapper">
+	<!--  -->
+	<resultMap type="com.party.domain.Collect" id="CollectBaseMapped">
+			<id column="coid" property="coid"/>
+			<result column="product_type" property="product_type"/>
+			<result column="product_id" property="product_id"/>
+			<result column="user_id" property="user_id"/>
+				
+				
+		<association property="site" javaType="com.party.domain.Site">
+		<id column="siid" property="siid"/>
+			<result column="title" property="title"/>
+			<result column="price" property="price"/>
+			<result column="city" property="city"/>
+			<result column="address" property="address"/>
+			<result column="room_num" property="room_num"/>
+			<result column="bed_num" property="bed_num"/>
+			<result column="apply" property="apply"/>
+			<result column="tags" property="tags"/>
+			<result column="description" property="description"/>
+			<result column="facilities" property="facilities"/>
+			<result column="reference" property="reference"/>
+			<result column="remind" property="remind"/>
+			<result column="num" property="num"/>
+			<result column="sequence" property="sequence"/>
+			<result column="admin_id" property="admin_id"/>
+		</association>
+		<association property="serve" javaType="com.party.domain.Serve">
+			<id column="sid" property="sid"/>
+			<result column="type" property="type"/>
+			<result column="title" property="title"/>
+			<result column="city" property="city"/>
+			<result column="price" property="price"/>
+			<result column="details" property="details"/>
+			<result column="notes" property="notes"/>
+			<result column="wechat" property="wechat"/>
+			<result column="number" property="number"/>
+			<result column="sequence" property="sequence"/>
+		</association>
+				
+		<association property="setMeal" javaType="com.party.domain.SetMeal">
+		<id column="smid" property="smid" />
+		<result column="meal_type" property="mealType"/>
+		<result column="title" property="title" />
+		<result column="price" property="price" />
+		<result column="city" property="city" />
+		<result column="address" property="address" />
+		<result column="roomNum" property="room_num" />
+		<result column="bedNum" property="bed_num" />
+		<result column="apply" property="apply" />
+		<result column="tags" property="tags" />
+		<result column="description" property="description" />
+		<result column="facilities" property="facilities" />
+		<result column="reference" property="reference" />
+		<result column="remind" property="remind" />
+		<result column="num" property="num" />
+		<result column="sequence" property="sequence" />
+		</association>	
+	<!-- 图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+		<id column="iid" property="iid"/>
+		<result column="product_type" property="productType"/>
+		<result column="product_id" property="productId"	/>
+		<result column="img_url" property="imgUrl"	/>
+		</collection>
+	
+
+
+	
+	
+	
+	</resultMap>
+	
+	
+	
+<select id="findByIdCollectSite" resultMap="CollectBaseMapped" parameterType="int">
+select * from collect c join site s on (c.product_type='site' and c.product_id=s.siid)
+join img i on (i.product_type='site' and i.product_id=s.siid)
+where c.user_id=#{uid} order by c.coid desc limit #{start},#{size}
+	</select>
+
+<select id="findByTypeServe" resultMap="CollectBaseMapped" >
+select * from collect c join serve s on (c.product_type='二级服务'
+and c.product_id=s.sid)
+join img i on (i.product_type='二级服务' and i.product_id=s.sid)
+where c.user_id=#{uid} and s.type=#{type} order by c.coid desc limit #{start},#{size}
+</select>
+
+
+<select id="findByIdServe" resultMap="CollectBaseMapped" >
+select * from collect c join serve s on 
+(c.product_type='二级服务' and c.product_id=s.sid)
+join img i on (i.product_type='二级服务' and i.product_id=s.sid)
+where c.coid=#{coid} and c.product_type='二级服务'
+</select>
+
+<select id="findByTypeMeal" resultMap="CollectBaseMapped" >
+select * from collect c join set_meal s on (c.product_type='聚会套餐'
+and c.product_id=s.smid)
+join img i on (i.product_type='聚会套餐' and i.product_id=s.smid)
+where c.user_id=#{uid} and c.product_type=#{type} order by c.coid desc limit #{start},#{size}
+</select>
+
+
+<select id="findByIdMeal" resultMap="CollectBaseMapped" >
+select * from collect c join set_meal s on 
+(c.product_type='聚会套餐' and c.product_id=s.smid)
+join img i on (i.product_type='聚会套餐' and i.product_id=s.smid)
+where c.coid=#{coid} and c.product_type='聚会套餐'
+</select>
+
+
+
+
+<select id="findByIdSite" resultMap="CollectBaseMapped" >
+select * from collect c join site s on (c.product_type='site' and c.product_id=s.siid)
+join img i on (i.product_type='site' and i.product_id=s.siid)
+where c.coid=#{coid} and c.product_type='site'
+</select>
+
+
+	
+</mapper>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>用户登录-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<style>
+		.mui-input-group:before,
+		.mui-input-group:after,
+		.mui-input-group .mui-input-row:after,
+		.mui-table-view:before,
+		.mui-table-view:after {
+			background: none !important;
+		}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">登录</h1>
+	</header>
+	<div class="cj-line-20"></div>
+	<div class="mui-content cj-bg-light-grey">
+		<form method="post" id='login-form' class="mui-input-group ">
+			<div class="mui-input-row">
+				<label>邮箱</label>
+				<input name="username" type="text" class="mui-input-clear mui-input" placeholder="手机号/邮箱">
+			</div>
+			<div class="mui-input-row mui-password">
+				<label>密码</label>
+				<input name="password" type="password" class="mui-input-clear mui-input" placeholder="密码">
+			</div>
+		</form>
+		<div class="cj-line-10"></div>
+		<form class="mui-input-group">
+			<ul class="mui-table-view mui-table-view-chevron">
+				<li class="mui-table-view-cell">
+					记住密码
+					<div id="autoLogin" class="mui-switch">
+						<div class="mui-switch-handle"></div>
+					</div>
+				</li>
+			</ul>
+		</form>
+		<div class="cj-line-10"></div>
+		<div class="mui-content-padded">
+			<button id='login' data-loading-text="登陆中" class="mui-btn mui-btn-block mui-btn-primary cj-btn">登录</button>
+			<div class="cj-line-10"></div>
+			<div class="link-area mui-text-center">
+				<a id='reg' href="/user/register">注册账号</a> <span class="spliter">|</span>
+				<a id='forgetPassword'>忘记密码</a>
+			</div>
+		</div>
+		<div class="mui-content-padded oauth-area">
+		</div>
+	</div>
+	<div id="footer"></div>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/footer.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/user/login.js"></script>
+</body>
+
+</html>

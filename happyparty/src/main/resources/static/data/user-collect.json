@@ -1,0 +1,58 @@
+{
+  "rel": true,
+  "code": 200,
+  "msg": "获取成功",
+  "result": [{
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "场地布置",
+      "img": "../img/goods-1.jpg",
+      "price": "600"
+    },
+    {
+      "title": "佛冈碧桂园 叹半山奢华度假别墅",
+      "type": "场地",
+      "img": "../img/goods-2.jpg",
+      "price": "500"
+    }, {
+      "title": "惠州双月湾 美丽的海港小镇",
+      "type": "场地布置",
+      "img": "../img/goods-1.jpg",
+      "price": "600"
+    },
+    {
+      "title": "佛冈碧桂园 叹半山奢华度假别墅",
+      "type": "场地",
+      "img": "../img/goods-2.jpg",
+      "price": "500"
+    },  {
+  	    "title":"惠州双月湾 美丽的海港小镇",
+        "type": "场地布置",
+        "img": "../img/goods-1.jpg",
+        "price":"700"
+      },
+      {
+        "title":"佛冈碧桂园 叹半山奢华度假别墅",
+        "type": "场地",
+        "img": "../img/goods-2.jpg",
+        "price":"500"
+      },  {
+    	    "title":"惠州双月湾 美丽的海港小镇",
+          "type": "场地布置",
+          "img": "../img/goods-1.jpg",
+          "price":"600"
+        },
+        {
+          "title":"佛冈碧桂园 叹半山奢华度假别墅",
+          "type": "场地",
+          "img": "../img/goods-2.jpg",
+          "price":"500"
+        },
+        {
+          "title":"惠州双月湾 美丽的海港小镇",
+          "type": "场地布置",
+          "img": "../img/goods-1.jpg",
+          "price":"600"
+        }
+  ],
+  "count": 57
+}

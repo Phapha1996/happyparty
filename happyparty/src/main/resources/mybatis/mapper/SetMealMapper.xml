@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-6-20 -->
+<!-- email:1115054416@qq.com  -->
+<mapper namespace="com.party.product.mapper.SetMealMapper">
+	<resultMap type="com.party.domain.SetMeal" id="listBaseMap">
+		<id column="smid" property="smid" />
+		<result column="title" property="title" />
+		<result column="price" property="price" />
+		<result column="city" property="city" />
+		<result column="address" property="address" />
+		<result column="roomNum" property="room_num" />
+		<result column="bedNum" property="bed_num" />
+		<result column="apply" property="apply" />
+		<result column="tags" property="tags" />
+		<result column="description" property="description" />
+		<result column="facilities" property="facilities" />
+		<result column="reference" property="reference" />
+		<result column="remind" property="remind" />
+		<result column="num" property="num" />
+		<result column="sequence" property="sequence" />
+		<!-- 所属分类 -->
+		<association property="mealCategory" javaType="com.party.domain.MealCategory">
+			<id column="mcid" property="mcid" />
+			<result column="cat_name" property="categoryName" />
+		</association>
+		<!-- 图片 -->
+		<collection property="imgs" ofType="com.party.domain.Img">
+			<id column="iid" property="iid" />
+			<result column="product_type" property="productType" />
+			<result column="product_id" property="productId" />
+			<result column="img_url" property="imgUrl" />
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.party.domain.SetMeal" id="baseMap" extends="listBaseMap">
+		<!-- 映射商家 -->
+		<association property="admin" javaType="com.party.domain.Admin">
+			<id column="aid" property="aid" />
+			<result column="account" property="account" />
+			<result column="phone_number" property="phoneNumber" />
+			<result column="email" property="email" />
+			<result column="cdate" property="cdate" />
+		</association>
+	</resultMap>
+	
+	<!-- 根据排序序号排序的sql片段-->
+	<sql id="orderByandPage">
+		ORDER BY sequence DESC
+		LIMIT #{startIndex},#{pageSize}
+	</sql>
+	<sql id="mealCategory">
+		<if test="categoryId!=null">
+			WHERE sm.category_id=#{categoryId}
+		</if>
+	</sql>
+	
+	<select id="countList" parameterType="java.lang.String" resultType="int">
+		SELECT COUNT(*) FROM set_meal sm
+		<include refid="mealCategory"></include>
+	</select>
+	
+	<select id="list" resultMap="listBaseMap">
+		SELECT sm.*,i.*,mct.cat_name,mct.mcid FROM set_meal sm LEFT JOIN img i
+		ON (i.product_id=sm.smid AND i.product_type='聚会套餐')
+		LEFT JOIN meal_category mct
+		ON mct.mcid=sm.category_id
+		<include refid="mealCategory"></include>
+		<include refid="orderByandPage"></include>
+	</select>
+	
+	<select id="findById" resultMap="baseMap" parameterType="int">
+		SELECT sm.*,i.*,mct.cat_name,mct.mcid,a.* FROM set_meal sm LEFT JOIN img i
+		ON (i.product_id=sm.smid AND i.product_type='聚会套餐')
+		LEFT JOIN meal_category mct
+		ON mct.mcid=sm.category_id
+		JOIN admin a ON a.aid=sm.admin_id
+		WHERE sm.smid=#{smid}
+	</select>
+	
+	<select id="listByRandomNum" parameterType="int" resultMap="listBaseMap">
+		<!-- 以下是提升效率备用 -->
+		<!-- SELECT * FROM set_meal sm LEFT JOIN img i
+		ON (i.product_id=sm.smid AND i.product_type='聚会套餐')
+		WHERE sm.smid >= ((SELECT MAX(smid) FROM set_meal)-(SELECT MIN(smid) FROM set_meal)) * RAND() + 
+		(SELECT MIN(smid) FROM set_meal)  LIMIT #{num} -->
+		SELECT * FROM set_meal sm LEFT JOIN img i
+		ON (i.product_id=sm.smid AND i.product_type='聚会套餐')
+		ORDER BY RAND() LIMIT #{num}
+	</select>
+	
+	<select id="countListLikeByTitle" resultType="int" parameterType="java.lang.String">
+		SELECT COUNT(*) FROM set_meal WHERE title LIKE CONCAT('%',#{key},'%')
+	</select>
+	
+	<select id="listLikeByTitle" resultMap="listBaseMap">
+		SELECT * FROM set_meal sm LEFT JOIN img i
+		ON (i.product_id=sm.smid AND i.product_type='聚会套餐')
+		WHERE sm.title LIKE CONCAT('%',#{key},'%')
+		<include refid="orderByandPage"></include>
+	</select>
+	
+</mapper>

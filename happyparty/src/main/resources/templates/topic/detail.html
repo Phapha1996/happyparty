@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>达人分享-欢聚网</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<style>
+		.mui-table-view:before,
+		.mui-table-view:after {
+			background: none !important;
+		}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav mui-white-nav-bar">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">主题标题</h1>
+		<button class="mui-btn  mui-btn-link mui-pull-right" id="reply">回复</button>
+	</header>
+
+	<!--下拉刷新容器-->
+	<div id="pullrefresh" class="mui-content cj-bg-light-grey mui-scroll-wrapper mui-content-phone cj-car-scroll">
+		<div class="mui-scroll">
+			<div id="topic" class="mui-content cj-bg-light-grey">
+
+			</div>
+			<div class="cj-line-20"></div>
+			<!--数据列表-->
+			<ul class="mui-table-view" id="cardContainer">
+			</ul>
+		</div>
+	</div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<div class="cj-line-30"></div>
+	<script id="cardTpl" type="text/html">
+		<% for(var i=0;i<result.length;i++){ %>
+			<li class="mui-table-view-cell mui-media">
+				<a href="#">
+					<img class="mui-media-object mui-pull-left cj-topic-detail-img"  src="<%==result[i].user.icon%>">
+					<div class="mui-media-body" >
+							<span style="font-size:14px;">
+								<%==result[i].user.nickname%>
+							</span>
+						<p class='mui-ellipsis'>
+							<p class='mui-ellipsis' style="font-size:12px;" style="width:100%";>
+								<span ><%==result[i].ctime %>&nbsp;</span>
+							</p>
+							<p>
+								<%==result[i].content%>
+							</p>
+						</p>
+					</div>
+			</li>
+		<% } %>
+	</script>
+	<script id="topicTpl" type="text/html">
+		<ul class="mui-table-view" style="margin-top:0px;">
+			<li class="mui-table-view-cell mui-media">
+				<div class="mui-content-padded cj-topic-detail-text">
+					<%==result.content%>
+				</div>
+			</li>
+			</ul>
+	</script>
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/topic/detail.js"></script>
+</body>
+
+</html>

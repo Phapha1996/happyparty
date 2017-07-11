@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>聚会清单-欢聚网</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/common/mui.min.css">
+  <link rel="stylesheet" href="css/common/mui.extra.css">
+  <link rel="stylesheet" href="css/common/mui.picker.min.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/order.css">
+</head>
+
+<body class="cj-bg-white">
+  <header class="mui-bar mui-bar-nav mui-white-nav-bar">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">定制需求</h1>
+  </header>
+  <div class="cj-line-20"></div>
+		<div class="cj-line-20"></div>
+		<div class="mui-content-padded">
+			<div class="mui-input-group">
+				<div class="mui-input-row">
+					<select class="mui-btn mui-btn-block" name="theme" style="width:100%;">
+						<option value="活动主题">活动主题</option>
+						<option value="生日宴会">生日宴会</option>
+						<option value="满月酒">满月酒</option>
+						<option value="同学聚会">同学聚会</option>
+					</select>
+				</div>
+				<div class="mui-input-row">
+					<select class="mui-btn mui-btn-block" name="address" style="width:100%;">
+						<option value="活动区域">活动区域</option>
+						<option value="南宁">南宁</option>
+					</select>
+				</div>
+
+				<div class="mui-input-row mui-plus-hidden">
+					<button style="width:100%;text-align: left;color:#999;font-size:17px;" id='datePicker' class="btn mui-btn mui-btn-block">活动时间</button>
+				</div>
+				<div class="mui-input-row mui-plus-hidden">
+					<input type="text" name="personNum" class=" mui-input-clear" placeholder="参与人数">
+				</div>
+				<div class="mui-input-row mui-plus-hidden">
+					<input type="text" name="name" class=" mui-input-clear" placeholder="联系人">
+				</div>
+				<div class="mui-input-row mui-plus-hidden">
+					<input type="text" name="phone" class=" mui-input-clear" placeholder="联系手机">
+				</div>
+
+			</div>
+			<div class="mui-input-row" style="margin: 10px 5px;">
+				<textarea id="textarea" rows="5" placeholder="活动备注"></textarea>
+			</div>
+			<div class="mui-content-padded">
+				<button type="button" id="publish" class="mui-btn mui-btn-primary mui-btn-block cj-btn">发布需求</button>
+			</div>
+
+		</div>
+
+
+
+  <div id="footer"></div>
+  <script src="js/common/mui.min.js"></script>
+  <script src="js/common/mui.href.js"></script>
+  <script src="js/common/mui.picker.min.js"></script>
+  <script src="js/common/jquery.min.js"></script>
+  <script src="js/common/footer.js"></script>
+  <script src="js/custom/custom.js"> </script>
+</body>
+
+</html>

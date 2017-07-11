@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- author:Caizhf -->
+<!-- createDate:2017-5-20 -->
+<!-- email:1115054416@qq.com  -->
+<!-- 服务分类的Mapper -->
+
+<mapper namespace="com.party.product.mapper.ServeCategoryMapper">
+	<resultMap type="com.party.domain.ServeCategory" id="listMap">
+		<id column="scid" property="scid"/>
+		<result column="cat_name" property="categoryName"/>
+	</resultMap>
+
+	<select id="listCategoryByServeType" parameterType="java.lang.String" resultMap="listMap">
+		SELECT sc.* FROM ser_category sc LEFT JOIN serve s 
+		ON s.ser_category_id=sc.scid 
+		WHERE s.type=#{type}
+	</select>
+</mapper>

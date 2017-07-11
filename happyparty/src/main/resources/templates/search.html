@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>我的订单-潮聚</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../css/common/mui.min.css">
+	<link rel="stylesheet" href="../css/common/mui.extra.css">
+	<link rel="stylesheet" href="../css/common/common.css">
+	<style>
+			.mui-pull-bottom-wrapper {text-align: center !important;color: #999 !important;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item{color:#999;}
+			#sliderSegmentedControl .mui-scroll .mui-control-item.mui-active {font-weight: bold;border-bottom: 3px solid #000 !important;line-height: 36px;color:#000;}
+			.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{border-top:none;}
+	</style>
+</head>
+
+<body class="cj-bg-light-grey">
+	<header class="mui-bar mui-bar-nav">
+		<div class="mui-input-row mui-search">
+			<input id="search" type="search" class="mui-input-clear " placeholder="搜素">
+		</div>
+	</header>
+	<div class="mui-content  cj-bg-light-grey" >
+		<div id="slider" class="mui-slider mui-fullscreen mui-content-phone">
+			<div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll cj-bg-white">
+					<a class="mui-control-item mui-active" href="#item1mobile">
+									场地
+					</a>
+					<a class="mui-control-item" href="#item2mobile">
+									场地布置
+					</a>
+					<a class="mui-control-item" href="#item3mobile">
+									服务
+					</a>
+					<a class="mui-control-item" href="#item4mobile">
+									套餐
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-slider-item mui-control-content">
+					<div id="scroll" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="siteList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item2mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="decorationList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item3mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="serviceList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="item4mobile" class="mui-slider-item mui-control-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="mui-table-view" id="mealList">
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+	<script type="text/html" id="siteTpl">
+		<% for(var i=0;i<list.length;i++){ %>
+			<a href="/site/detail?id=<%==list[i].id%>">
+				<div class="mui-card-content">
+					<div class="mui-card ">
+						<div class="images-wrapper">
+							<img onclick="" src="../<%==list[i].img %>" alt="" width="100%" height="100%" />
+							<div class="images-content images-left">
+								&nbsp;￥
+								<%==list[i].price %>&nbsp;&nbsp;
+							</div>
+							<!-- <div class="images-content images-right add-plan">
+								&nbsp;&nbsp;加入计划&nbsp;&nbsp;
+							</div> -->
+						</div>
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<p class="cj-text-size-14 cj-text-weight">
+									<%==list[i].title %>
+								</p>
+								<p>
+									<% for(var j=0;j<list[i].label.length;j++){ %>
+										<span class="mui-badge mui-badge-primary"><%==list[i].label[j] %></span>
+										<%}%>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<% } %>
+	</script>
+	<script type="text/html" id="decorationTpl">
+		<% for(var i=0;i<result.length;i++){ %>
+		<a href="/siteLayout/detail?id=<%==result[i].did%>" >
+			<div class="mui-card">
+				<div class="mui-card-header mui-card-media" style="height:50vw;background-image:url(<%==result[i].imgs[0].imgUrl%>)"></div>
+				<div class="mui-card-content">
+					<div class="mui-card-content-inner cj-siteLayout-title">
+						<p><%==result[i].title%></p>
+					</div>
+				</div>
+				<div class="mui-card-footer">
+					<span href="#" class="mui-card-link cj-text-color-danger">￥300起</span>
+					<span href="#" class="mui-card-link">
+					<button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+				</span>
+				</div>
+			</div>
+		</a>
+		<% } %>
+	</script>
+	<script type="text/html" id="serviceTpl">
+		<% for(var i=0;i<result.length;i++){ %>
+			<div class="mui-content-padded">
+			<a href="<% if(result[i].type=='餐饮服务'){ print('/catering/detail?sid='+result[i].sid) }else{ print('/service/detail?sid='+result[i].sid) }%>" class="cj-serives-item" style="display:block;background:url('<%==result[i].imgs[0].imgUrl%>');">
+				<div class="cj-line-60"></div>
+				<div class="cj-serives-item-info">
+					<div class="cj-text-weight" style="color:#fff;margin-left:10px"><%==result[i].title%></div>
+					<div class="cj-serives-item-price" style="color:#fff;margin-left:10px">￥<%==result[i].price%></div>
+				</div>
+			</a>
+		</div>
+		<%}%>
+	</script>
+	<script type="text/html" id="mealTpl">
+		<% for(var i=0;i<list.length;i++){ %>
+			<a href="/meal/detail?id=<%==list[i].id%>">
+				<div class="mui-card-content">
+					<div class="mui-card ">
+						<div class="images-wrapper">
+							<img onclick="" src="../<%==list[i].img %>" alt="" width="100%" height="100%" />
+							<div class="images-content images-left">
+								&nbsp;￥
+								<%==list[i].price %>&nbsp;&nbsp;
+							</div>
+							<!-- <div class="images-content images-right add-plan">
+								&nbsp;&nbsp;加入计划&nbsp;&nbsp;
+							</div> -->
+						</div>
+						<div class="mui-card-content">
+							<div class="mui-card-content-inner">
+								<p class="cj-text-size-14 cj-text-weight">
+									<%==list[i].title %>
+								</p>
+								<p>
+									<% for(var j=0;j<list[i].label.length;j++){ %>
+										<span class="mui-badge mui-badge-primary"><%==list[i].label[j] %></span>
+										<%}%>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+			<% } %>
+	</script>
+
+	<script type="text/html" id="decoration">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">待处理</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">退款</button>
+						</span>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">联系商家</button>
+							&nbsp;
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="service">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">未使用</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">退款</button>
+						</span>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">二维码</button>
+							&nbsp;
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+	<script type="text/html" id="meal">
+		<li class="mui-table-view-cell mui-media">
+			<a href="#">
+				<img class="mui-media-object mui-pull-left" src="<%==img.imgUrl%>">
+				<div class="mui-media-body">
+						<%==title%>
+					<p class='mui-ellipsis'>
+						下单时间:<%==ctime%>
+						<span class="mui-pull-right">
+							<button type="button" style="color:#4cd964;font-weight:bold;"  class="mui-btn mui-btn-link mui-min-bth">已完成</button>
+						</span>
+					</p>
+					<p class='mui-ellipsis'>
+						总价:￥<%==price%>
+						<span class="mui-pull-right">
+							<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined mui-min-bth">评价</button>
+						</span>
+					</p>
+				</div>
+			</a>
+		</li>
+	</script>
+
+	<script src="../js/common/template-web.js"></script>
+	<script src="../js/common/mui.min.js"></script>
+	<script src="../js/common/mui.href.js"></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/common/mui.pullToRefresh.js"></script>
+	<script src="../js/common/mui.pullToRefresh.material.js"></script>
+	<script src="../js/search/search.js"></script>
+</body>
+
+</html>

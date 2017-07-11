@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>欢聚网</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/common/loading.css">
+  <link rel="stylesheet" href="css/common/mui.min.css">
+  <link rel="stylesheet" href="css/common/mui.extra.css">
+  <link rel="stylesheet" href="css/common/common.css">
+  <link rel="stylesheet" href="css/common/mui.picker.css">
+  <link rel="stylesheet" href="css/common/mui.poppicker.css">
+</head>
+<body>
+  <!-- loading弹窗 -->
+  <div id='loading' style="display:block;">
+    <div class='loaded'>
+      <div class='load'></div>
+    </div>
+  </div>
+  <!-- /loading弹窗 -->
+  <!--头部导航栏 start---->
+  <header id="header" class="mui-bar mui-row mui-bar-transparent">
+    <div class="mui-row">
+      <div class=" mui-col-xs-2 mui-col-sm-2">
+        <button id="showCityPicker" class=" mui-btn  mui-btn-link mui-btn-nav mui-pull-left cj-text-color-gray cj-text-weight">
+          &nbsp;<span id="city">南宁</span><span class="mui-icon mui-icon-arrowdown cj-text-size-18"></span>
+          </button>
+      </div>
+      <div class="mui-col-xs-10 mui-col-sm-10">
+        <div class="mui-input-row mui-search">
+          <input id="search" type="search" class="mui-input-clear " placeholder="搜素">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--头部导航栏 end---->
+  <!--轮播 start---->
+  <div class="mui-content">
+    <div id="sliderContainer">
+    </div>
+  </div>
+  <!--轮播end---->
+  <!--推荐公告 start---->
+  <div id="sliderTextContainer">
+  </div>
+  <!--推荐公告 end---->
+  <!--九宫格 start---->
+  <div class="cj-line-5"></div>
+  <div id="slider2" class="mui-slider cj-bg-white">
+    <div class="mui-slider-group cj-bg-white">
+
+      <div class="mui-slider-item">
+        <ul class="mui-table-view mui-grid-view mui-grid-9 cj-bg-white cj-none-border">
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/meal">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-1.png">
+									<div class="mui-media-body">套餐</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/service?type=达人服务">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-2.png">
+									<div class="mui-media-body">达人服务</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/custom">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-3.png">
+									<div class="mui-media-body">定制</div>
+							</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="#">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-4.png">
+									<div class="mui-media-body">聚会商城</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/site">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-5.png">
+									<div class="mui-media-body">场地</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/catering">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-6.png">
+									<div class="mui-media-body">餐饮</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/siteLayout">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-7.png">
+									<div class="mui-media-body">布置</div>
+								</a>
+          </li>
+          <li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3 cj-none-border cj-padded-0">
+            <a href="/service?type=包车服务">
+									<img class="mui-icon cj-icon-size-40" src="img/icon-8.png">
+									<div class="mui-media-body">交通</div>
+							</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div>
+  <div id="cardContainer">
+
+  </div>
+  <div class="cj-line-60"></div>
+  <div id="footer"></div>
+  <!--模板---->
+  <script id="sliderTpl" type="text/html">
+    <div id="slider" class="mui-slider">
+      <div class="mui-slider-group mui-slider-loop">
+        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+          <a href="#">
+              <img src="<%==$data[$data.length-1].img_url %>"/>
+            </a>
+        </div>
+        <!-- 第一张 -->
+        <% for(var i=0;i<$data.length;i++){ %>
+          <div class="mui-slider-item">
+            <a href="#">
+              <img src="<%==$data[i].img_url %>"/>
+            </a>
+          </div>
+          <% } %>
+            <!-- 第四张 -->
+            <div class="mui-slider-item">
+              <a href="#">
+              <img src="<%==$data[0].img_url %>"/>
+            </a>
+            </div>
+            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+              <a href="#">
+              <img src="<%==$data[$data.length-1].img_url %>"/>
+            </a>
+            </div>
+      </div>
+      <div class="mui-slider-indicator">
+        <div class="mui-indicator mui-active"></div>
+        <% for(var i=0;i<$data.length;i++){ %>
+          <div class="mui-indicator"></div>
+          <% } %>
+      </div>
+  </script>
+  <script id="sliderTextTpl" type="text/html">
+    <div class="mui-card mui-card-no-shadow cj-margin-0 cj-text-carousel-card">
+      <div class="mui-card-header mui-card-media">
+        <img class="cj-icon-home-article" src="img/icon-home-article.png">
+        <div class="mui-media-body">
+          <ul class="cj-text-carousel ">
+            <% for(var i=0;i<$data.length;i++){ %>
+              <li class="cj-text-carousel-item ">
+                <a title="公告推荐" href="<%==$data[i].link_url %>" class="cj-text-color-gray">
+                  <%==$data[i].title %>
+                </a>
+              </li>
+              <% } %>
+          </ul><br/>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="cardTpl" type="text/html">
+    <% for(var i=0;i<list.length;i++){ %>
+    <a href="/meal/detail?type=生日趴&id=<%==list[i].id%>">
+    <div class="mui-card-content">
+      <div class="mui-card ">
+        <img onclick="" src="<%==list[i].img %>" alt="" width="100%" />
+        <div class="mui-card-content">
+          <div class="mui-card-content-inner">
+            <p onclick="go('goods/goodsDetail.html')" class="cj-text-size-14 cj-text-weight"><%==list[i].title %></p>
+            <p>
+                <% for(var j=0;j<list[i].label.length;j++){ %>
+              <span class="mui-badge mui-badge-primary"><%==list[i].label[j] %></span>
+              <%}%>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+   </a>
+    <% } %>
+  </script>
+  <script src="js/common/template-web.js"></script>
+  <script src="js/common/mui.min.js"></script>
+  <script src="js/common/mui.href.js"></script>
+  <script src="js/common/mui.picker.js"></script>
+  <script src="js/common/mui.poppicker.js"></script>
+  <script src="js/common/jquery.min.js"></script>
+  <script src="js/common/footer.js"></script>
+  <script src="js/index/textslideup.js"></script>
+  <script src="js/index/city.data.js"></script>
+  <script src="js/index/index.js"></script>
+  <script src="js/common/loading.js"></script>
+</body>
+
+</html>
